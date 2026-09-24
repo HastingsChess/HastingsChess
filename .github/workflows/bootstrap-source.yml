@@ -1,0 +1,44 @@
+name: Materialise Phase 4 source
+on:
+  push:
+    paths:
+      - '.github/workflows/bootstrap-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unpack authoritative source and commit
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          archive = Path("HastingsChess_Phase4_Native_Packaging_Candidate_3(3).zip")
+          with ZipFile(archive) as z:
+              assert z.testzip() is None
+              files = 0
+              for info in z.infolist():
+                  src = Path(info.filename)
+                  assert src.parts[0] == "HastingsChess_Source"
+                  path = Path(*src.parts[1:])
+                  assert path.parts and ".." not in path.parts
+                  if info.is_dir():
+                      continue
+                  path.parent.mkdir(parents=True, exist_ok=True)
+                  path.write_bytes(z.read(info))
+                  mode = (info.external_attr >> 16) & 0o777
+                  if mode:
+                      path.chmod(mode)
+                  files += 1
+          assert files == 217, files
+          PY
+          rm 'HastingsChess_Phase4_Native_Packaging_Candidate_3(3).zip' .github/workflows/bootstrap-source.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Materialise Phase 4 source tree'
+          git push
