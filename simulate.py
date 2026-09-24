@@ -62,7 +62,9 @@ def run(count,seed,limit,level=2,seconds=None,white='fairy',black='fairy',nodes=
  if level==BENCHMARK_LEVEL_3 and (white!='fairy' or black!='fairy'):
   raise ValueError('Benchmark Level 3 requires Fairy-Stockfish on both sides')
  if count<1 or limit<1:raise ValueError('Game count and move limit must be positive')
- settings=dict(count=count,seed=seed,limit=limit,level=level,seconds=seconds,white=white,black=black,nodes=nodes,bonus_mode=bonus_mode)
+ settings=dict(count=count,seed=seed,limit=limit,level=level,
+               difficulty_preset='benchmark_level_3' if level==BENCHMARK_LEVEL_3 else 'public',
+               seconds=seconds,white=white,black=black,nodes=nodes,bonus_mode=bonus_mode)
  bots={0:Opponent(white,level,seconds,nodes),1:Opponent(black,level,seconds,nodes)}
  results=[];cancel=cancel or threading.Event()
  try:
@@ -102,6 +104,6 @@ if __name__=='__main__':
  a.add_argument('--white',choices=['fairy','light','legacy'],default='fairy');a.add_argument('--black',choices=['fairy','light','legacy'],default='fairy')
  a.add_argument('--output',default='batch.json');args=a.parse_args()
  args.level=BENCHMARK_LEVEL_3 if args.level.lower() in ('benchmark-3',BENCHMARK_LEVEL_3.lower()) else int(args.level)
- d=run(args.games,args.seed,args.limit,args.level,args.seconds,args.white,args.black,args.nodes,progress=lambda n:print('Completed',n,flush=True),bonus_mode=args.bonus_mode)
+ d=run(args.games,args.seed,args.limit,args.level,args.seconds,args.white,args.black,args.nodes,progress=lambda n:print('Completed',n,flush=True))
  Path(args.output).write_text(json.dumps(d,indent=2),encoding='utf8')
  print({k:v for k,v in d.items() if k!='games'})

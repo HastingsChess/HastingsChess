@@ -12,11 +12,14 @@ OLD_LEVELS={1:(.16,2,400),2:(.6,4,2500),3:(1.6,5,10000),
         4:(2.2,6,16000),5:(3.0,7,24000),6:(4.0,8,40000),
         7:(5.2,9,65000),8:(6.8,10,95000),9:(9.0,12,140000),10:(12.0,14,200000)}
 BENCHMARK_LEVEL_3='Benchmark Level 3'
+CURRENT_BUILD_LEVEL_1=(.10,2,250)
+CURRENT_BUILD_LEVEL_1_TOLERANCE=250
 # The benchmark retains the original numeric level too: compound widths and
 # endpoint counts depend on it, not merely the time/MultiPV tuple.
 SEARCH_LEVEL={1:1,2:1,3:1,4:1,5:2,6:4,7:5,8:7,9:8,10:10}
-LEVELS={1:(.10,2,250),2:(.12,2,300),3:(.14,2,350),
-        **{public:OLD_LEVELS[old] for public,old in SEARCH_LEVEL.items() if public>=4}}
+LEVELS={1:(.07,6,200),2:(.08,5,250),3:(.09,4,300),4:CURRENT_BUILD_LEVEL_1,
+        **{public:OLD_LEVELS[old] for public,old in SEARCH_LEVEL.items() if public>=5}}
+WEAK_TOLERANCE={1:700,2:430,3:300,4:CURRENT_BUILD_LEVEL_1_TOLERANCE}
 LEVEL_NAMES=('Beginner','Casual','Developing','Intermediate','Strong Club',
              'Advanced','Expert','Very Strong','Master','Maximum')
 
@@ -135,13 +138,15 @@ class Hybrid:
     def _select(self,ranked,g):
         """Fallible selection among fully legal Hastings-aware candidates."""
         ranked=sorted(ranked,key=lambda item:item[0],reverse=True)
-        if self.public_level not in (1,2,3) or len(ranked)<2:return ranked[0]
-        tolerance={1:250,2:135,3:65}[self.public_level]
+        if self.public_level not in WEAK_TOLERANCE or len(ranked)<2:return ranked[0]
+        tolerance=WEAK_TOLERANCE[self.public_level]
         best=ranked[0][0]
         # Never throw away a proved mate for a merely plausible move.
         if best>=90000:return ranked[0]
         weights=[math.exp(-min(10000,max(0,best-v))/tolerance) for v,_ in ranked]
-        digest=hashlib.sha256((''.join(g.s.b)+str(g.white_move)+g.phase+str(self.public_level)).encode()).digest()
+        # All fallible tiers use the current-build Level-1 seed stream. This
+        # preserves Level 4 byte-for-byte choices and couples lower-tier draws.
+        digest=hashlib.sha256((''.join(g.s.b)+str(g.white_move)+g.phase+'1').encode()).digest()
         rng=random.Random(int.from_bytes(digest[:8],'big'))
         return rng.choices(ranked,weights=weights,k=1)[0]
 
@@ -161,7 +166,7 @@ class Hybrid:
         if g.phase in ('response','bonus','rescue_bonus'):
             sequence=self._compound(g.s,g.white_move,normal=g.normal_pending,
                 left=g.bonus_left,share=.85,bonus_mode=g.bonus_mode,
-                alternatives=self.public_level in (1,2,3))
+                alternatives=self.public_level in WEAK_TOLERANCE)
             value,path=self._select(sequence,g) if isinstance(sequence,list) else sequence
             move=next((m for m in path if m is not None),None)
             if move not in legal:raise EngineError('Compound search returned an invalid first action')

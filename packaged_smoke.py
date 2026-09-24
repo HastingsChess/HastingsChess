@@ -16,7 +16,7 @@ def run():
             app.refresh()
             root.update()
             assert root.winfo_viewable(), 'Packaged GUI did not map a visible window'
-            assert root.title()=='Hastings Chess: Catastrophic Military Stupidity Simulator. Also Axes'
+            assert root.title()=='Hastings Chess: Catastrophic Military Stupidity Simulator. Also Axes.'
             assert app.canvas.winfo_width()>200 and app.canvas.winfo_height()>200
             assert app.eval_canvas is None, 'Evaluation bar leaked into live game'
             assert app.settings.norman_elo==1066 and SAXON_RATING==1066
