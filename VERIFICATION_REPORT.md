@@ -1,26 +1,35 @@
-# Hastings Chess — release verification
+# Hastings Chess — difficulty release verification
 
-24 September 2026. Source commit [`4c470f9`](https://github.com/dfntrecords-ui/Hastings-Chess/commit/4c470f9c32be6acf7bb8ccdcbfc7f40414b67f05), native workflow [run #36004577528](https://github.com/dfntrecords-ui/Hastings-Chess/actions/runs/36004577528). The existing Python/Fairy-Stockfish hybrid, charge and knight/pawn counterattack were retained. This release changes the public difficulty ladder, removes the pre-release unrestricted bonus mode, migrates initial Norman Elo to 1066, and bundles the Rules window with the requested title and “Also Axes” text.
+24 September 2026. Source commit [`3a1407b`](https://github.com/dfntrecords-ui/Hastings-Chess/commit/3a1407bd561c8baa5dbfaf5b88bca07986374689), native workflow [run #36009251673](https://github.com/dfntrecords-ui/Hastings-Chess/actions/runs/36009251673). This pass changed only the public difficulty curve, explicit simulation preset metadata, a pre-existing simulation CLI argument error, and the final full stop in the main-window title. The approved Rules text, rating system, replay analysis, Hastings rules and Python/Fairy-Stockfish architecture were retained.
+
+## Difficulty calibration
+
+- **New Level 4 exactly preserves the preceding release's Level 1:** 0.10-second default budget, MultiPV 2, 250 recorded base nodes, numeric search level 1 (including compound beam and endpoint limits), 250-centipawn selection tolerance, and the same deterministic seed stream. This was compared directly with the preceding release's actual `hybrid.py` using the real Fairy-Stockfish process in five positions: opening, Black ordinary move, pre-charge preview, Norman response and Game 5 bonus-first rescue. All five first actions matched with fixed node budgets.
+- **Benchmark Level 3 remains unchanged:** old numeric level 3, 1.6 seconds, MultiPV 5 and 10,000 recorded base nodes; the old compound widths, endpoint behaviour and charge preview use the same numeric search level. It remains an explicit simulation/testing preset, separate from public Level 3.
+- **Public Levels 1–3** use progressively more search time and progressively less tolerance for inferior legal, Hastings-evaluated candidates. They consider six, five and four Fairy MultiPV candidates respectively, with 700, 430 and 300-centipawn selection tolerances. The same controlled selection applies to ordinary moves and complete Norman compound paths. Legal move validation and forced rescues remain authoritative in Python.
+- **Public Levels 4–10** increase strictly in time, MultiPV count, node budget and numeric compound search level. Level 10 retains the previous maximum: 12 seconds, MultiPV 14, 200,000 recorded base nodes and numeric compound level 10.
+- A small 11-position real-engine smoke comparison, using fixed engine nodes and a deeper reference analysis, recorded total candidate-score loss of 2058, 1872, 1615 and 1007 centipawns for Levels 1, 2, 3 and 4 respectively, with best-move counts of 1, 1, 3 and 5. This is a diagnostic sample, **not** a human-strength calibration or statistically reliable match result. Human playtesting is needed to establish whether Level 1 feels beginner-friendly.
+- Simulation output identifies `difficulty_preset: public` versus `difficulty_preset: benchmark_level_3` and retains the explicit level value. Both command-line entries were smoke-tested. The earlier 100-game balance figures were not rerun or used to rebalance the game.
+
+## Native packages
 
 | Verification | Windows x64 | macOS Apple Silicon |
 | --- | --- | --- |
 | Native runner | Windows Server 2022, x64 | macOS 15, arm64 |
-| Applicable automated suite | 94 passed | 94 passed |
+| Applicable automated suite | 96 passed | 96 passed |
 | Packaged app | `HastingsChess.exe` in portable folder | `Hastings Chess.app` |
 | Packaged engine and visible Tk GUI smoke | Passed | Passed |
 | UCI, Hastings variant, Housecarl mapping, legal AI move | Passed | Passed |
-| Rules window and bundled text, new title | Passed in packaged GUI smoke | Passed in packaged GUI smoke |
-| Public 1–10 selector, clean Elo 1066/1066 | Passed in packaged GUI smoke | Passed in packaged GUI smoke |
-| Replay-only evaluation bar and post-game analysis | Passed in packaged GUI smoke | Passed in packaged GUI smoke |
+| Ten-level selector, clean Elo 1066/1066, Rules window | Passed in packaged GUI smoke | Passed in packaged GUI smoke |
+| Exact title ending `Also Axes.` | Passed in packaged GUI smoke | Passed in packaged GUI smoke |
+| Replay-only evaluation and rated Elo persistence | Passed in packaged GUI smoke | Passed in packaged GUI smoke |
 | Path with spaces and unrelated working directory | Passed | Passed |
 | Bundled engine architecture | Windows x64 executable | `file` and `lipo` confirmed arm64 |
 | Distributable | `HastingsChess_Windows_Portable.zip` | `HastingsChess_macOS_arm64.zip` |
-| SHA-256 of distributable ZIP | `4563dba97fc33306ed4a0fc86786d6a41a001317ae8f9c3a569690ce957ca7bb` | `320c95833e5810372755bba55e51ba961e9c7b86e0810eede018b0621875451e` |
+| SHA-256 of distributable ZIP | `430fd0ffbcee4cd5bda5b317f8566abab6f97ec3e9238a4b8609da82c4adf249` | `ba988e1a139f4b4ab13732fdba24a81dccf268fa7c4681ce9c1a2dfe0f78a529` |
 
-The native jobs executed the real Fairy-Stockfish tests and packaged application smoke checks. The GUI smoke opened a visible Tk window, checked all difficulty options and both initial ratings, opened and reopened the bundled Rules text, played a human move and waited for the bundled Fairy opponent, verified that the live evaluation bar remained absent, completed a rated game, checked persisted Norman Elo and fixed Saxon Elo, and opened Replay for the post-game evaluation bar. The scripts require explicit engine and GUI success markers before publishing an artifact. Windows copied the app to a path with spaces and launched it with the working directory elsewhere. macOS copied the `.app` to a path with spaces and ran its executable from `/`.
+The packaged GUI smoke opens the Rules window, verifies the fresh Elo display and all ten selector choices, makes a human move and waits for a bundled Fairy response, confirms the absence of live analysis, finishes a rated game and verifies persistent Norman rating changes, then enters and exits post-game Replay. The native build scripts require positive engine and GUI smoke markers before archiving. The Windows job copies the folder to a path with spaces and launches it from an unrelated working directory; the macOS job similarly copies the `.app` and launches its executable from `/`.
 
-The public Level 4 uses precisely the former Level 1 configuration and deterministic best-move selection. `Benchmark Level 3` retains the former Level 3 resources, numeric beam width, endpoint count and search behaviour. The lower levels choose among already legal, Hastings-evaluated alternatives with increasing tolerance. A deterministic candidate-selection smoke found cumulative sample scores of -5480, -4200, -1620 and 0 centipawns for public Levels 1, 2, 3 and 4 over 80 sampled move numbers. This confirms the selection mechanism, **not** calibrated human strength or statistically established game performance. The previous 100-game figures supplied by the user were not rerun for this release.
+The local Linux environment ran 82 headless tests with real Fairy-Stockfish. It has no display; the GUI tests ran on native CI. The **new** Windows artifact has not yet been personally tested on the user's machine, although its predecessor was. The macOS artifact has not been tested on personal Mac hardware or launched through Finder. The native `.app` passed local/ad-hoc `codesign --verify --deep`, but it is not Developer ID signed or notarised. Gatekeeper behaviour after an internet download remains unverified. A separate clean Windows machine without Python was not available.
 
-The local Linux environment ran 80 headless tests with the real Fairy-Stockfish engine. It has no display, so GUI tests were executed on the native runners. The updated Windows artifact has **not** been personally tested by the user on their Windows machine; the previous portable version was. The macOS artifact has **not** been tested on a personal Mac or launched through Finder. The native `.app` passed its runner launch and local ad-hoc `codesign --verify --deep`; it is not Developer ID signed or notarised. Gatekeeper behaviour after internet download remains unverified. The bundled one-folder runtime was inspected, but no separate clean Windows computer without Python was available.
-
-Known limits remain: threefold repetition and insufficient-material draws are not adjudicated; historical old-rule replays may be viewed as chronicles but are not analysed under the current rules; explicitly unrestricted bonus-mode replays are rejected; bounded hybrid search can miss tactics. The app does not expose evaluation or mate information during live play. Batch simulations never affect local ratings.
+Known limits are unchanged: threefold repetition and insufficient-material draws are not adjudicated; historical old-rule replays are not analysed under the present rules; explicitly unrestricted bonus-mode replays are rejected; bounded hybrid search can miss tactics. Evaluations and mate information remain hidden during live play. Batch simulations never update local ratings.
