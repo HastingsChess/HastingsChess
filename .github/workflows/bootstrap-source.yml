@@ -36,9 +36,9 @@ jobs:
                   files += 1
           assert files == 217, files
           PY
-          rm 'HastingsChess_Phase4_Native_Packaging_Candidate_3(3).zip' .github/workflows/bootstrap-source.yml
+          rm 'HastingsChess_Phase4_Native_Packaging_Candidate_3(3).zip'
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A
+          git add -A -- . ':!.github/workflows'
           git commit -m 'Materialise Phase 4 source tree'
           git push
