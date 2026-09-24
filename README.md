@@ -399,7 +399,7 @@ Hastings Chess.app
 
 The Apple Silicon build contains its own required runtime and native Fairy-Stockfish engine.
 
-At the time of writing, the macOS package has passed native automated build/launch checks but has not yet had the same personal-machine testing as the Windows release.
+At the time of writing, the macOS package has passed native automated build/launch checks but has not yet had the same personal-machine testing as the Windows release. This is not really my problem, but best of luck with it and everything.
 
 Unsigned or non-notarised development releases may require the usual macOS Gatekeeper approval.
 
