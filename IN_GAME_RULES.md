@@ -54,7 +54,7 @@ During a bonus action, Norman pawns may:
 - capture diagonally as normal;
 - capture directly forward.
 
-Bonus pawns cannot double-move, capture en passant or promote.
+On each bonus action, a pawn may advance only one square. However, the same pawn may use both bonus actions, so it can advance one square and then another if both moves are legal. Bonus actions cannot use the normal two-square opening pawn move, en passant or promotion.
 
 All moves must keep the Norman king safe.
 

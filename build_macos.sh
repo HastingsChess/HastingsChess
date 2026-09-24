@@ -58,4 +58,7 @@ ditto 'dist/Hastings Chess.app' "$stage/Hastings Chess.app"
 rm -rf "$stage"
 stage=""
 ditto -c -k --sequesterRsrc --keepParent 'dist/Hastings Chess.app' "dist/HastingsChess_macOS_${machine}.zip"
+guide='Honestly, you should probably read this at some point.txt'
+/usr/bin/zip -j -q "dist/HastingsChess_macOS_${machine}.zip" "$guide"
+unzip -p "dist/HastingsChess_macOS_${machine}.zip" "$guide" | cmp - "$guide"
 echo "Built and smoke-tested dist/HastingsChess_macOS_${machine}.zip"

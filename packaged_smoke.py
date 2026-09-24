@@ -20,6 +20,12 @@ def run():
             assert app.canvas.winfo_width()>200 and app.canvas.winfo_height()>200
             assert app.eval_canvas is None, 'Evaluation bar leaked into live game'
             assert app.settings.norman_elo==1066 and SAXON_RATING==1066
+            assert not hasattr(app,'knights'),'Development knight counter visible'
+            def widgets(parent):
+                for child in parent.winfo_children():
+                    yield child
+                    yield from widgets(child)
+            assert not any(isinstance(w,ttk.Button) and w.cget('text')=='Simulate' for w in widgets(root))
             assert 'Normans — Elo 1066' in app.ratings.cget('text')
             app.rules_button.invoke();root.update()
             assert app.rules_window.winfo_viewable(),'Bundled Rules window did not open'

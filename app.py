@@ -46,7 +46,6 @@ class App:
     ttk.Button(tools,text='Open replay',command=self.open_replay).pack(side='left')
     self.review_button=ttk.Button(tools,text='Review finished',command=self.review_finished)
     self.review_button.pack(side='left',padx=4)
-    ttk.Button(tools,text='Simulate',command=self.simulate).pack(side='left',padx=4)
     self.rules_button=ttk.Button(tools,text='Rules',command=self.show_rules)
     self.rules_button.pack(side='left',padx=4)
     ttk.Button(tools,text='Pause / resume',command=self.toggle_pause).pack(side='left',padx=4)
@@ -68,7 +67,6 @@ class App:
     self.rating_detail=ttk.Label(panel,text='',wraplength=205,justify='left');self.rating_detail.pack(anchor='w',pady=(0,7))
     self.tip=None;self.ratings.bind('<Enter>',self.rating_tooltip);self.ratings.bind('<Leave>',self.hide_rating_tooltip)
     self.odds=ttk.Label(panel,text='',wraplength=215,justify='left');self.odds.pack(anchor='w')
-    self.knights=ttk.Label(panel,text='');self.knights.pack(anchor='w',pady=6)
     self.event_detail=ttk.Label(panel,text='',wraplength=195,justify='left');self.event_detail.pack(anchor='w',fill='x')
     ttk.Label(panel,text='The chronicle',font=('Segoe UI',10,'bold')).pack(anchor='w',pady=(10,2))
     self.events=tk.Listbox(panel,selectmode='browse',font=('Segoe UI',9),exportselection=False)
@@ -276,7 +274,6 @@ class App:
      self.rating_detail.config(text=f'Normans: {before} → {after} ({after-before:+d})\nSaxons: 1066 → 1066 (+0)')
     else:self.rating_detail.config(text='')
     self.odds.config(text=f'Upcoming charge chance: {self.g.odds():.0%} (conditional). White move {self.g.white_move}.' if not self.replay else 'Saved battle')
-    self.knights.config(text=f'Norman knights surviving: {self.g.s.b.count("n")}')
     self.analyse_replay()
     self.draw()
  def draw(self):
