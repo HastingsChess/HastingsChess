@@ -81,6 +81,16 @@ class GuiTests(unittest.TestCase):
   a.rules_window.destroy();a.show_rules();self.root.update()
   self.assertTrue(a.rules_window.winfo_exists());self.assertEqual(a.g.export(),before)
   a.new();self.assertEqual(a.g.bonus_mode,'knight_pawn')
+ def test_shipping_controls_hide_development_counters(self):
+  self.assertFalse(hasattr(self.app,'knights'))
+  def widgets(parent):
+   for child in parent.winfo_children():
+    yield child
+    yield from widgets(child)
+  labels=[str(w.cget('text')) for w in widgets(self.root) if isinstance(w,(tk.ttk.Button,tk.ttk.Label))]
+  self.assertNotIn('Simulate',labels)
+  self.assertFalse(any('Norman knights surviving:' in label for label in labels))
+  self.assertEqual(self.app.g.s.b.count('n'),2)
  def test_game5_rescue_click_and_replay(self):
   import rules as r
   from tests import at

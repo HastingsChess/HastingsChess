@@ -10,6 +10,9 @@ if ($LASTEXITCODE -ne 0) { throw 'Rules or engine test failed.' }
 python -m PyInstaller --clean --noconfirm hastings.spec
 if ($LASTEXITCODE -ne 0) { throw 'PyInstaller failed.' }
 $portable = Join-Path $PSScriptRoot 'dist\HastingsChess'
+$guideName = 'Honestly, you should probably read this at some point.txt'
+$guide = Join-Path $PSScriptRoot $guideName
+Copy-Item -LiteralPath $guide -Destination (Join-Path $portable $guideName)
 $stage = Join-Path $env:TEMP ('Hastings Chess Portable Test ' + [Guid]::NewGuid().ToString('N'))
 $errorLog = Join-Path $env:APPDATA 'Hastings Chess\launch-errors.log'
 try {
@@ -18,8 +21,12 @@ try {
     $exe = Join-Path $stage 'HastingsChess.exe'
     $tkScript = Join-Path $stage '_internal\_tk_data\ttk\altTheme.tcl'
     $engineBinary = Join-Path $stage '_internal\engine\fairy-stockfish.exe'
-    if (-not (Test-Path $exe) -or -not (Test-Path $tkScript) -or -not (Test-Path $engineBinary)) {
-        throw 'Portable folder is missing the executable, Tk scripts, or Fairy-Stockfish.'
+    $packagedGuide = Join-Path $stage $guideName
+    if (-not (Test-Path $exe) -or -not (Test-Path $tkScript) -or -not (Test-Path $engineBinary) -or -not (Test-Path -LiteralPath $packagedGuide)) {
+        throw 'Portable folder is missing the executable, Tk scripts, Fairy-Stockfish, or player documentation.'
+    }
+    if ((Get-FileHash -LiteralPath $guide -Algorithm SHA256).Hash -ne (Get-FileHash -LiteralPath $packagedGuide -Algorithm SHA256).Hash) {
+        throw 'Packaged player documentation differs from approved source text.'
     }
     Push-Location $env:WINDIR
     try {
