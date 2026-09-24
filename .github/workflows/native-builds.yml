@@ -1,0 +1,40 @@
+name: Native portable builds
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  windows:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test and build real portable Windows app
+        shell: pwsh
+        run: ./build_windows.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HastingsChess_Windows_Portable
+          path: dist/HastingsChess_Windows_Portable.zip
+  mac:
+    strategy:
+      matrix:
+        include:
+          - runner: macos-15
+            arch: arm64
+          - runner: macos-15-intel
+            arch: x86_64
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile matching Fairy-Stockfish, test, and build app
+        run: bash ./build_macos.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HastingsChess_macOS_${{ matrix.arch }}
+          path: dist/HastingsChess_macOS_${{ matrix.arch }}.zip
