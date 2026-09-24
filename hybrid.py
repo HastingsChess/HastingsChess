@@ -4,21 +4,29 @@ Engine CP values decide ordinary play. Python generates true special actions,
 then the real engine searches the resulting ordinary White-to-move positions.
 Chance planning samples the next White turn and never reads the game's RNG.
 """
-import time,math
+import time,math,hashlib,random
 import rules as r
 from engine_uci import FairyEngine,EngineError,SearchCancelled,compatible,uci_move
 
-LEVELS={1:(.16,2,400),2:(.6,4,2500),3:(1.6,5,10000),
+OLD_LEVELS={1:(.16,2,400),2:(.6,4,2500),3:(1.6,5,10000),
         4:(2.2,6,16000),5:(3.0,7,24000),6:(4.0,8,40000),
         7:(5.2,9,65000),8:(6.8,10,95000),9:(9.0,12,140000),10:(12.0,14,200000)}
-LEVEL_NAMES=('Beginner','Casual','Club','Intermediate','Strong Club',
+BENCHMARK_LEVEL_3='Benchmark Level 3'
+# The benchmark retains the original numeric level too: compound widths and
+# endpoint counts depend on it, not merely the time/MultiPV tuple.
+SEARCH_LEVEL={1:1,2:1,3:1,4:1,5:2,6:4,7:5,8:7,9:8,10:10}
+LEVELS={1:(.10,2,250),2:(.12,2,300),3:(.14,2,350),
+        **{public:OLD_LEVELS[old] for public,old in SEARCH_LEVEL.items() if public>=4}}
+LEVEL_NAMES=('Beginner','Casual','Developing','Intermediate','Strong Club',
              'Advanced','Expert','Very Strong','Master','Maximum')
 
 class Hybrid:
     def __init__(self,engine=None,level=3,seconds=None,nodes=None):
-        if int(level) not in LEVELS:raise ValueError('Difficulty must be 1–10')
-        self.engine=engine or FairyEngine();self.level=int(level)
-        default,self.candidates,self.base_nodes=LEVELS[self.level]
+        if level!=BENCHMARK_LEVEL_3 and (type(level) is not int or level not in LEVELS):
+            raise ValueError('Difficulty must be 1–10 or Benchmark Level 3')
+        self.engine=engine or FairyEngine();self.public_level=level
+        self.level=3 if level==BENCHMARK_LEVEL_3 else SEARCH_LEVEL[level]
+        default,self.candidates,self.base_nodes=(OLD_LEVELS[3] if level==BENCHMARK_LEVEL_3 else LEVELS[level])
         self.seconds=seconds if seconds is not None else default
         self.fixed_nodes=nodes;self.last_info={};self.cancel=None
 
@@ -77,7 +85,7 @@ class Hybrid:
         if not values:raise EngineError('Special position cannot be bridged safely to Fairy-Stockfish; select the lightweight opponent.')
         return max(values)
 
-    def _compound(self,s,white_move,normal=True,left=2,share=1.0,preview=False,bonus_mode='knight_pawn'):
+    def _compound(self,s,white_move,normal=True,left=2,share=1.0,preview=False,bonus_mode='knight_pawn',alternatives=False):
         """Beam over the whole Black sequence; terminal mates stop immediately.
 
         Each node carries its complete action path. Endpoint scores include a
@@ -122,7 +130,20 @@ class Hybrid:
         if not ranked and not normal:
             return -self._leaf(s,0,white_move+1,share),[]
         if not ranked:raise EngineError('No legal counterattack continuation')
-        return max(ranked,key=lambda x:x[0])
+        return ranked if alternatives else max(ranked,key=lambda x:x[0])
+
+    def _select(self,ranked,g):
+        """Fallible selection among fully legal Hastings-aware candidates."""
+        ranked=sorted(ranked,key=lambda item:item[0],reverse=True)
+        if self.public_level not in (1,2,3) or len(ranked)<2:return ranked[0]
+        tolerance={1:250,2:135,3:65}[self.public_level]
+        best=ranked[0][0]
+        # Never throw away a proved mate for a merely plausible move.
+        if best>=90000:return ranked[0]
+        weights=[math.exp(-min(10000,max(0,best-v))/tolerance) for v,_ in ranked]
+        digest=hashlib.sha256((''.join(g.s.b)+str(g.white_move)+g.phase+str(self.public_level)).encode()).digest()
+        rng=random.Random(int.from_bytes(digest[:8],'big'))
+        return rng.choices(ranked,weights=weights,k=1)[0]
 
     def _charge_value(self,s,move,root,share,bonus_mode):
         # A mate/stalemate before the new White turn takes precedence.
@@ -138,8 +159,10 @@ class Hybrid:
         self.cancel=cancel;self._check();legal=g.legal()
         if not legal:return None
         if g.phase in ('response','bonus','rescue_bonus'):
-            value,path=self._compound(g.s,g.white_move,normal=g.normal_pending,
-                left=g.bonus_left,share=.85,bonus_mode=g.bonus_mode)
+            sequence=self._compound(g.s,g.white_move,normal=g.normal_pending,
+                left=g.bonus_left,share=.85,bonus_mode=g.bonus_mode,
+                alternatives=self.public_level in (1,2,3))
+            value,path=self._select(sequence,g) if isinstance(sequence,list) else sequence
             move=next((m for m in path if m is not None),None)
             if move not in legal:raise EngineError('Compound search returned an invalid first action')
             detail='Complete Norman sequence with Fairy-Stockfish endpoint search'
@@ -148,7 +171,7 @@ class Hybrid:
             for m in legal:
                 t=g.s.copy();r.apply(t,m)
                 ranked.append((-self._leaf(t,1-g.side,g.white_move,.8/len(legal)),m))
-            value,move=max(ranked,key=lambda x:x[0]);detail='Python legality bridge + Fairy-Stockfish'
+            value,move=self._select(ranked,g);detail='Python legality bridge + Fairy-Stockfish'
         else:
             chance=g.hazard.get(g.white_move+1,0) if not g.charged else 0
             analysis=self._analyse(g.s,g.side,g.white_move,multipv=self.candidates,
@@ -171,7 +194,7 @@ class Hybrid:
                     charge_cp=self._charge_value(future,g.white_move+1,g.side,.35/len(analysis),g.bonus_mode)
                     value=(1-chance)*value+chance*charge_cp
                 ranked.append((value,a.move))
-            value,move=max(ranked,key=lambda x:x[0]);detail=f'Fairy-Stockfish MultiPV + Hastings planning (next charge {chance:.0%})'
+            value,move=self._select(ranked,g);detail=f'Fairy-Stockfish MultiPV + Hastings planning (next charge {chance:.0%})'
         if move not in legal:raise EngineError('Search returned an illegal Hastings move')
         self.last_info=dict(engine=self.engine.name,mode='Fairy-Stockfish hybrid',
             calls=self.engine.calls-calls,nodes=self.engine.total_nodes-nodes,

@@ -76,7 +76,7 @@ def in_check(s,side):
 
 def pseudo(s,side,knight_only=False,bonus_mode=None):
  if knight_only and bonus_mode is None:bonus_mode='knight_pawn'
- if bonus_mode not in (None,'knight_pawn','any_piece'):raise ValueError('Unknown bonus ruleset')
+ if bonus_mode not in (None,'knight_pawn'):raise ValueError('Unsupported pre-release experimental Norman bonus ruleset' if bonus_mode=='any_piece' else 'Unknown bonus ruleset')
  if bonus_mode and side!=1:raise ValueError('Only the Normans receive bonus actions')
  b=s.b; moves=[]
  def add(i,j,promo='',tag=''):

@@ -8,7 +8,7 @@ from game import Game,replay_valid
 from workers import EngineWorker
 from engine_uci import EngineError
 from settings import Settings,SAXON_RATING
-from hybrid import LEVEL_NAMES
+from hybrid import LEVEL_NAMES,BENCHMARK_LEVEL_3
 from replay_analysis import display,white_fraction
 from replay_worker import ReplayWorker
 
@@ -47,18 +47,15 @@ class App:
     self.review_button=ttk.Button(tools,text='Review finished',command=self.review_finished)
     self.review_button.pack(side='left',padx=4)
     ttk.Button(tools,text='Simulate',command=self.simulate).pack(side='left',padx=4)
+    self.rules_button=ttk.Button(tools,text='Rules',command=self.show_rules)
+    self.rules_button.pack(side='left',padx=4)
     ttk.Button(tools,text='Pause / resume',command=self.toggle_pause).pack(side='left',padx=4)
     engrow=ttk.Frame(root,padding=(8,0,8,5));engrow.pack(fill='x')
     self.engine_box=ttk.Combobox(engrow,textvariable=self.engine_mode,values=['Fairy-Stockfish hybrid','Lightweight custom'],state='readonly',width=24)
     self.engine_box.pack(side='left');self.engine_box.bind('<<ComboboxSelected>>',lambda e:self.mode_changed())
     ttk.Button(engrow,text='Check engine' if getattr(sys,'frozen',False) or sys.platform=='darwin' else 'Repair engine',command=self.repair_engine).pack(side='left',padx=6)
     ttk.Label(engrow,textvariable=self.engine_status,wraplength=250).pack(side='left',fill='x',expand=True)
-    self.rules_mode=tk.StringVar(value='Knights + pawns')
-    rulesrow=ttk.Frame(root,padding=(8,0,8,5));rulesrow.pack(fill='x')
-    ttk.Label(rulesrow,text='Norman bonus rules for new battles:').pack(side='left')
-    self.rules_box=ttk.Combobox(rulesrow,textvariable=self.rules_mode,
-       values=['Knights + pawns','Experimental: any piece'],state='readonly',width=25)
-    self.rules_box.pack(side='left',padx=8)
+    self.rules_window=None
     body=ttk.Frame(root,padding=8);body.pack(fill='both',expand=True);self.body=body
     self.canvas=tk.Canvas(body,bg='#17262e',highlightthickness=0)
     self.canvas.pack(side='left',fill='both',expand=True)
@@ -85,7 +82,7 @@ class App:
  def invalidate(self):
     self.cancel.set();self.cancel=threading.Event();self.generation+=1;self.busy=False;self.selected=None
  def new(self):
-    self.invalidate();self.leave_replay();self.g=Game(random.randrange(1,2**30),bonus_mode=self.selected_rules());self.paused=False
+    self.invalidate();self.leave_replay();self.g=Game(random.randrange(1,2**30));self.paused=False
     self.game_id=uuid.uuid4().hex;self.game_rated=self.mode.get()!='Computer vs computer';self.rating_change=None
     self.g.start_turn();self.refresh()
  def difficulty_label(self,n):return f'{n}. {LEVEL_NAMES[n-1]}'
@@ -94,8 +91,32 @@ class App:
     except (ValueError,IndexError,OSError) as exc:
      messagebox.showerror('Difficulty',str(exc));return
     self.level.set(n);self.invalidate();self.refresh()
- def selected_rules(self):
-    return 'any_piece' if self.rules_mode.get()=='Experimental: any piece' else 'knight_pawn'
+ def show_rules(self):
+    if self.rules_window and self.rules_window.winfo_exists():
+     self.rules_window.lift();self.rules_window.focus_set();return
+    text=(ROOT/'IN_GAME_RULES.md').read_text(encoding='utf-8')
+    window=tk.Toplevel(self.root);window.title('Hastings Chess — Rules');window.geometry('650x680');window.minsize(420,350)
+    self.rules_window=window
+    frame=ttk.Frame(window,padding=10);frame.pack(fill='both',expand=True)
+    scroll=ttk.Scrollbar(frame);scroll.pack(side='right',fill='y')
+    body=tk.Text(frame,wrap='word',font=('Segoe UI',11),padx=12,pady=10,relief='flat',yscrollcommand=scroll.set)
+    body.pack(side='left',fill='both',expand=True);scroll.config(command=body.yview)
+    body.tag_configure('title',font=('Segoe UI',17,'bold'),spacing1=8,spacing3=8)
+    body.tag_configure('heading',font=('Segoe UI',13,'bold'),spacing1=12,spacing3=4)
+    body.tag_configure('bold',font=('Segoe UI',11,'bold'))
+    import re
+    for line in text.splitlines():
+     if line.startswith('# '):tag='title';line=line[2:]
+     elif line.startswith('## '):tag='heading';line=line[3:]
+     else:tag=None
+     if line=='---':continue
+     line=line.rstrip()
+     pos=0
+     for match in re.finditer(r'\*\*(.*?)\*\*',line):
+      body.insert('end',line[pos:match.start()]);body.insert('end',match.group(1),'bold');pos=match.end()
+     body.insert('end',line[pos:]+'\n',tag)
+    body.config(state='disabled')
+    window.protocol('WM_DELETE_WINDOW',window.destroy)
  def mode_changed(self):
     if self.mode.get()=='Computer vs computer':self.game_rated=False
     self.invalidate();self.engine_status.set(self.engine_mode.get()+' selected');self.refresh()
@@ -116,6 +137,7 @@ class App:
  def close(self):
     self.closed=True;self.cancel.set()
     self.leave_replay();self.hide_rating_tooltip()
+    if self.rules_window and self.rules_window.winfo_exists():self.rules_window.destroy()
     if self.sim_cancel:self.sim_cancel.set()
     self.worker.close()
     if self.tick:
@@ -195,11 +217,15 @@ class App:
     if count is None:return
     seed=simpledialog.askinteger('Reproducible self-play','First seed:',initialvalue=230926,minvalue=0,parent=self.root)
     if seed is None:return
+    choice=simpledialog.askstring('Simulation difficulty','Public level 1–10 or Benchmark Level 3:',initialvalue=str(self.level.get()),parent=self.root)
+    if choice is None:return
+    level=BENCHMARK_LEVEL_3 if choice.strip()==BENCHMARK_LEVEL_3 else int(choice) if choice.strip() in tuple(str(i) for i in range(1,11)) else None
+    if level is None:messagebox.showerror('Simulation difficulty','Choose 1–10 or Benchmark Level 3.');return
     path=filedialog.asksaveasfilename(defaultextension='.json',filetypes=[('JSON statistics and replays','*.json')])
     if not path:return
     self.paused=True;self.invalidate();self.sim_cancel=threading.Event()
     mode='fairy' if self.engine_mode.get()=='Fairy-Stockfish hybrid' else 'light'
-    level=self.level.get();cancel=self.sim_cancel
+    cancel=self.sim_cancel
     self.status.config(text='Self-play running. Click Simulate again to stop after the current action.')
     def work():
      try:
@@ -241,7 +267,7 @@ class App:
     if self.paused:status+=' [paused]'
     if self.busy:status+=' — thinking…'
     if self.replay and self.replay.get('format')=='hastings-chess-1':status+=' — legacy rules (view only)'
-    elif not self.replay:status+=' · '+('any-piece bonus' if self.g.bonus_mode=='any_piece' else 'knight/pawn bonus')
+    elif not self.replay:status+=' · knight/pawn bonus'
     self.status.config(text=status)
     self.review_button.state(['!disabled'] if self.g.winner else ['disabled'])
     self.ratings.config(text=f'Normans — Elo {self.settings.norman_elo}\nSaxons — Elo {SAXON_RATING}')

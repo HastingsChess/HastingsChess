@@ -91,10 +91,4 @@ class RealEngineTests(unittest.TestCase):
   m=h.choose(g);self.assertIn(m,g.legal());self.assertEqual(uci_move(m),'f8f7')
   g.move(m);self.assertEqual(g.phase,'response')
   m=h.choose(g);self.assertIn(m,g.legal())
- def test_unrestricted_compound_uses_engine(self):
-  g=Game(bonus_mode='any_piece');g.s=position({'a1':'K','h8':'k','d6':'q','g6':'n'})
-  g.side=1;g.phase='response';g.charged=True;g.normal_pending=True;g.bonus_left=2
-  h=Hybrid(self.e,level=1,nodes=1200);m=h.choose(g)
-  self.assertIn(m,g.legal());self.assertGreater(h.last_info['calls'],0)
-
 if __name__=='__main__':unittest.main()

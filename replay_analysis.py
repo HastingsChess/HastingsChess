@@ -3,7 +3,7 @@ from dataclasses import dataclass
 import math
 import rules as r
 from engine_uci import compatible
-from hybrid import Hybrid
+from hybrid import Hybrid,BENCHMARK_LEVEL_3
 
 @dataclass(frozen=True)
 class Score:
@@ -26,7 +26,7 @@ def white_fraction(score):
 class ReplayAnalyzer:
     def __init__(self,engine,nodes=1800):
         self.engine=engine;self.nodes=nodes
-        self.hybrid=Hybrid(engine,level=3,nodes=nodes)
+        self.hybrid=Hybrid(engine,level=BENCHMARK_LEVEL_3,nodes=nodes)
 
     def event(self,replay,index,cancel=None):
         if replay.get('format')!='hastings-chess-3':

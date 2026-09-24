@@ -237,19 +237,17 @@ class PhaseThreeRules(unittest.TestCase):
   g.move(next(m for m in g.legal() if m[0]==at('d6') and m[1]==at('d5')))
   g.move(next(m for m in g.legal() if m[0]==at('d5') and m[1]==at('d4')))
   self.assertEqual(g.s.b[at('d4')],'p');self.assertEqual(g.side,0)
- def test_unrestricted_bonus_all_pieces_and_promotion(self):
-  s=position({'h1':'K','h8':'k','a2':'p','d6':'r','d7':'b','f6':'q','g6':'n'})
-  moves=r.legal(s,1,bonus_mode='any_piece')
-  self.assertEqual({s.b[m[0]].lower() for m in moves},{'k','p','r','b','q','n'})
-  self.assertTrue(any(m[0]==at('a2') and m[1]==at('a1') and m[2]=='q' for m in moves))
-  self.assertFalse(any(m[0]==at('a2') for m in r.legal(s,1,bonus_mode='knight_pawn')))
- def test_unrestricted_bonus_same_queen_twice(self):
-  g=Game(bonus_mode='any_piece');g.s=position({'a1':'K','h8':'k','d6':'q'});g.side=1;g.charged=True;g.phase='response';g.normal_pending=True;g.bonus_left=2
-  g.move(next(m for m in g.legal() if m[0]==at('h8')))
-  for source in ('d6','d5'):
-   self.assertIn('d5' if source=='d6' else 'd4',{r.symbol(m[1]) for m in g.legal() if m[0]==at(source)})
-   g.move(next(m for m in g.legal() if m[0]==at(source) and r.symbol(m[1])==('d5' if source=='d6' else 'd4')))
-  self.assertEqual(g.s.b[at('d4')],'q');self.assertEqual(g.side,0)
+ def test_legacy_unrestricted_rejected(self):
+  with self.assertRaisesRegex(ValueError,'Unsupported pre-release experimental'):
+   Game(bonus_mode='any_piece')
+  with self.assertRaisesRegex(ValueError,'Unsupported pre-release experimental'):
+   r.legal(position({'h1':'K','h8':'k'}),1,bonus_mode='any_piece')
+  data=Game().export();data['bonus_mode']='any_piece'
+  with self.assertRaisesRegex(ValueError,'Unsupported pre-release experimental'):
+   replay_valid(data)
+  data=Game().export();data['ruleset']='hastings-any_piece'
+  with self.assertRaisesRegex(ValueError,'Unsupported pre-release experimental'):
+   replay_valid(data)
  def test_game5_rescue_bonus_first_then_ordinary_and_bonus(self):
   data=json.loads((Path(__file__).parent/'replays/original_game_5.json').read_text())
   before=data['events'][56]
@@ -264,12 +262,6 @@ class PhaseThreeRules(unittest.TestCase):
   g.move(g.legal()[0]);self.assertEqual(g.side,0)
   replay_valid(json.loads(json.dumps(g.export())))
   self.assertEqual([e['phase'] for e in g.log if e['phase'] in ('rescue_bonus','response','bonus')][:3],['rescue_bonus','response','bonus'])
- def test_unrestricted_has_no_bonus_first_if_no_ordinary_move(self):
-  s=position({'a1':'K','h8':'k','b8':'R','g8':'R'})
-  g=Game(bonus_mode='any_piece');g.s=s;g.side=1;g.charged=True;g.bonus_left=2;g.normal_pending=True
-  self.assertEqual(set(r.legal(s,1,bonus_mode='any_piece')),set(r.legal(s,1)))
-  g._prepare_response()
-  self.assertEqual(g.phase,'response' if r.legal(s,1) else 'ordinary')
  def test_view_all_previous_rule_versions(self):
   for i in (1,2,3,4,5):
    d=json.loads((Path(__file__).parent/f'replays/original_game_{i}.json').read_text())

@@ -4,7 +4,7 @@ import rules as r
 
 class Game:
     def __init__(self,seed=1,hazard=None,bonus_mode='knight_pawn'):
-        if bonus_mode not in ('knight_pawn','any_piece'):raise ValueError('Unknown Norman bonus ruleset')
+        if bonus_mode!='knight_pawn':raise ValueError('Unsupported pre-release experimental Norman bonus ruleset' if bonus_mode=='any_piece' else 'Unknown Norman bonus ruleset')
         self.bonus_mode=bonus_mode
         self.seed=int(seed);self.rng=random.Random(self.seed)
         self.hazard=dict(r.CHARGE_HAZARD if hazard is None else hazard)
@@ -132,6 +132,8 @@ class Game:
 def replay_valid(data):
     if not isinstance(data,dict) or data.get('format') not in ('hastings-chess-1','hastings-chess-2','hastings-chess-3'):
         raise ValueError('Not a Hastings Chess replay')
+    if ('bonus_mode' in data and data['bonus_mode']!='knight_pawn') or str(data.get('ruleset','')).endswith('-any_piece') or any(isinstance(e,dict) and e.get('bonus_mode')=='any_piece' for e in data.get('events',[]) if isinstance(data.get('events'),list)):
+        raise ValueError('Unsupported pre-release experimental Norman bonus ruleset in replay')
     events=data.get('events')
     if not isinstance(events,list) or not events or len(events)>100000:raise ValueError('Replay needs 1–100000 events')
     for e in events:

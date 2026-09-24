@@ -5,7 +5,7 @@ from pathlib import Path
 import rules as r
 from game import Game
 from ai import Search
-from hybrid import Hybrid
+from hybrid import Hybrid,BENCHMARK_LEVEL_3,LEVELS
 from engine_uci import FairyEngine,SearchCancelled
 
 BASE=Path(__file__).resolve().parent
@@ -22,7 +22,7 @@ class Opponent:
   if self.kind=='fairy':
    h=Hybrid(self.engine,self.level,self.seconds,self.nodes);m=h.choose(g,cancel);info=h.last_info
   else:
-   bot=(self.legacy.Search if self.kind=='legacy' else Search)(self.level,self.seconds)
+   bot=(self.legacy.Search if self.kind=='legacy' else Search)(self.level,self.seconds if self.seconds is not None else .12)
    m=bot.choose(g) if self.kind=='legacy' else bot.choose(g,cancel)
    info=dict(mode=self.kind,seconds=time.monotonic()-begin,nodes=bot.nodes,calls=0)
   return m,info
@@ -55,8 +55,12 @@ def summarise_game(g,settings,thinking,stopped=False):
   normal_response_delta=delta(end,normal),knight_bonus_delta=delta(normal,counter),
   full_sequence_delta=delta(begin,counter),thinking=thinking,replay=g.export())
 
-def run(count,seed,limit,level=2,seconds=.12,white='fairy',black='fairy',nodes=None,cancel=None,progress=None,bonus_mode='knight_pawn'):
+def run(count,seed,limit,level=2,seconds=None,white='fairy',black='fairy',nodes=None,cancel=None,progress=None,bonus_mode='knight_pawn'):
  if white not in ('fairy','light','legacy') or black not in ('fairy','light','legacy'):raise ValueError('Unknown opponent')
+ if bonus_mode!='knight_pawn':raise ValueError('Unsupported pre-release experimental Norman bonus ruleset')
+ if level not in LEVELS and level!=BENCHMARK_LEVEL_3:raise ValueError('Unknown simulation difficulty')
+ if level==BENCHMARK_LEVEL_3 and (white!='fairy' or black!='fairy'):
+  raise ValueError('Benchmark Level 3 requires Fairy-Stockfish on both sides')
  if count<1 or limit<1:raise ValueError('Game count and move limit must be positive')
  settings=dict(count=count,seed=seed,limit=limit,level=level,seconds=seconds,white=white,black=black,nodes=nodes,bonus_mode=bonus_mode)
  bots={0:Opponent(white,level,seconds,nodes),1:Opponent(black,level,seconds,nodes)}
@@ -93,11 +97,11 @@ def run(count,seed,limit,level=2,seconds=.12,white='fairy',black='fairy',nodes=N
 
 if __name__=='__main__':
  a=argparse.ArgumentParser();a.add_argument('--games',type=int,default=2);a.add_argument('--seed',type=int,default=230926)
- a.add_argument('--limit',type=int,default=80);a.add_argument('--level',type=int,default=3)
- a.add_argument('--seconds',type=float,default=.12);a.add_argument('--nodes',type=int)
+ a.add_argument('--limit',type=int,default=80);a.add_argument('--level',default='3',help='Public 1–10 or benchmark-3')
+ a.add_argument('--seconds',type=float);a.add_argument('--nodes',type=int)
  a.add_argument('--white',choices=['fairy','light','legacy'],default='fairy');a.add_argument('--black',choices=['fairy','light','legacy'],default='fairy')
- a.add_argument('--bonus-mode',choices=['knight_pawn','any_piece'],default='knight_pawn')
  a.add_argument('--output',default='batch.json');args=a.parse_args()
+ args.level=BENCHMARK_LEVEL_3 if args.level.lower() in ('benchmark-3',BENCHMARK_LEVEL_3.lower()) else int(args.level)
  d=run(args.games,args.seed,args.limit,args.level,args.seconds,args.white,args.black,args.nodes,progress=lambda n:print('Completed',n,flush=True),bonus_mode=args.bonus_mode)
  Path(args.output).write_text(json.dumps(d,indent=2),encoding='utf8')
  print({k:v for k,v in d.items() if k!='games'})

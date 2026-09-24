@@ -5,7 +5,7 @@ from unittest.mock import patch
 import rules as r
 from game import Game
 from engine_uci import FairyEngine,compatible
-from hybrid import Hybrid,LEVELS
+from hybrid import Hybrid,LEVELS,OLD_LEVELS,SEARCH_LEVEL,BENCHMARK_LEVEL_3
 from replay_analysis import ReplayAnalyzer,Score,display,white_fraction
 from settings import Settings,SAXON_RATING,norman_next,settings_path
 
@@ -19,8 +19,8 @@ class RatingsTests(unittest.TestCase):
  def test_persistent_and_idempotent(self):
   with tempfile.TemporaryDirectory() as d:
    path=Path(d)/'settings.json';s=Settings(path)
-   self.assertEqual((s.norman_elo,s.data['difficulty']),(1100,3))
-   self.assertEqual(s.record('one','black'),(1100,norman_next(1100,1)))
+   self.assertEqual((s.norman_elo,s.data['difficulty']),(1066,3))
+   self.assertEqual(s.record('one','black'),(1066,norman_next(1066,1)))
    self.assertIsNone(Settings(path).record('one','black'))
    s=Settings(path);s.set_difficulty(10)
    self.assertEqual(Settings(path).data['difficulty'],10)
@@ -31,7 +31,13 @@ class RatingsTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as d:
    with patch('settings.sys.platform','win32'),patch.dict('settings.os.environ',{'APPDATA':d}):
     self.assertEqual(settings_path(),Path(d)/'Hastings Chess'/'settings.json')
-   p=Path(d)/'bad.json';p.write_text('{bad');self.assertEqual(Settings(p).norman_elo,1100)
+   p=Path(d)/'bad.json';p.write_text('{bad');self.assertEqual(Settings(p).norman_elo,1066)
+ def test_legacy_migration_once(self):
+  with tempfile.TemporaryDirectory() as d:
+   p=Path(d)/'settings.json';p.write_text(json.dumps({'norman_elo':1100,'difficulty':7,'rated_games':['old']}))
+   s=Settings(p);self.assertEqual((s.norman_elo,s.data['difficulty']),(1066,7))
+   self.assertEqual(s.data['schema_version'],2)
+   s.record('release-win','black');self.assertEqual(Settings(p).norman_elo,1082)
 
 class ReplayScoreTests(unittest.TestCase):
  def test_orientation_and_mate_format(self):
@@ -61,6 +67,32 @@ class ReplayScoreTests(unittest.TestCase):
   self.assertEqual(score.cp_white,300)
   self.assertIn('100%',score.note)
 
+class DifficultyCalibrationTests(unittest.TestCase):
+ def test_fallible_selection_remains_legal_and_weaker(self):
+  # Same plausible, already Hastings-legal candidates at many move numbers.
+  # Deterministic per position: repeat runs cannot change a saved benchmark.
+  g=Game();ranked=[(0,g.legal()[0]),(-80,g.legal()[1]),(-180,g.legal()[2])]
+  scores={}
+  for level in (1,2,3,4):
+   h=Hybrid(engine=object(),level=level)
+   values=[]
+   for move_number in range(1,81):
+    g.white_move=move_number
+    picked=h._select(ranked,g)
+    self.assertIn(picked[1],g.legal())
+    values.append(picked[0])
+   scores[level]=sum(values)
+  self.assertLess(scores[1],scores[4])
+  self.assertLess(scores[2],scores[4])
+  self.assertLess(scores[3],scores[4])
+  self.assertEqual(scores[4],0)
+ def test_benchmark_configuration_and_simulation_entry(self):
+  from simulate import run
+  h=Hybrid(engine=object(),level=BENCHMARK_LEVEL_3)
+  self.assertEqual((h.level,h.seconds,h.candidates,h.base_nodes),(3,1.6,5,10000))
+  with self.assertRaisesRegex(ValueError,'requires Fairy-Stockfish'):
+   run(1,1,1,level=BENCHMARK_LEVEL_3,white='light',black='fairy')
+
 class RealReplayTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):cls.e=FairyEngine()
@@ -89,9 +121,9 @@ class RealReplayTests(unittest.TestCase):
     score=a.event(d,i)
     self.assertIsInstance(score,Score,(i,event['phase']))
   self.assertIn('compound',a.event(d,next(i for i,e in enumerate(d['events']) if e['phase']=='charge_end')).note)
- def test_safe_unrepresentable_and_unrestricted(self):
+ def test_safe_unrepresentable(self):
   from tests import position
-  g=Game(bonus_mode='any_piece');g.s=position({'a2':'K','h8':'k','b5':'P','h2':'r','f6':'n'})
+  g=Game();g.s=position({'a2':'K','h8':'k','b5':'P','h2':'r','f6':'n'})
   g.side=1;g.phase='response';g.charged=True;g.normal_pending=True;g.bonus_left=2
   self.assertFalse(compatible(g.s,g.side))
   g.log=[];g._record('post-charge','charge_end',[])
@@ -110,9 +142,16 @@ class RealReplayTests(unittest.TestCase):
     self.assertIsInstance(analyzer.event(d,i),Score)
  def test_all_levels_legal_ordinary_and_rescue(self):
   self.assertEqual(set(LEVELS),set(range(1,11)))
-  self.assertEqual(LEVELS[3],(1.6,5,10000))
-  for prev,nxt in zip(LEVELS.values(),list(LEVELS.values())[1:]):
+  self.assertEqual(LEVELS[4],OLD_LEVELS[1])
+  self.assertEqual(LEVELS[10],OLD_LEVELS[10])
+  self.assertEqual(OLD_LEVELS[3],(1.6,5,10000))
+  self.assertTrue(all(LEVELS[n][0]<LEVELS[4][0] for n in (1,2,3)))
+  for prev,nxt in zip(list(LEVELS.values())[3:],list(LEVELS.values())[4:]):
    self.assertTrue(all(b>a for a,b in zip(prev,nxt)))
+  benchmark=Hybrid(self.e,level=BENCHMARK_LEVEL_3)
+  self.assertEqual((benchmark.level,benchmark.seconds,benchmark.candidates,benchmark.base_nodes),(3,*OLD_LEVELS[3]))
+  self.assertEqual(Hybrid(self.e,level=4).level,1)
+  self.assertNotEqual(Hybrid(self.e,level=3).level,benchmark.level)
   for level in LEVELS:
    h=Hybrid(self.e,level=level,nodes=350)
    normal=Game();m=h.choose(normal);self.assertIn(m,normal.legal())

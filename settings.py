@@ -3,7 +3,8 @@ import json, os, sys, tempfile
 from pathlib import Path
 
 SAXON_RATING = 1066
-NORMAN_INITIAL = 1100
+NORMAN_INITIAL = 1066
+SETTINGS_SCHEMA = 2
 K_FACTOR = 32
 
 def settings_path():
@@ -22,14 +23,18 @@ def norman_next(current, result):
 class Settings:
     def __init__(self, path=None):
         self.path = Path(path) if path else settings_path()
-        self.data = {'norman_elo':NORMAN_INITIAL,'difficulty':3,'rated_games':[]}
+        self.data = {'schema_version':SETTINGS_SCHEMA,'norman_elo':NORMAN_INITIAL,'difficulty':3,'rated_games':[]}
         try:
             source=json.loads(self.path.read_text(encoding='utf-8'))
             if isinstance(source,dict):
                 n=source.get('norman_elo');level=source.get('difficulty');ids=source.get('rated_games')
-                if type(n) is int and 100<=n<=4000:self.data['norman_elo']=n
+                if source.get('schema_version') == SETTINGS_SCHEMA and type(n) is int and 100<=n<=4000:
+                    self.data['norman_elo']=n
                 if type(level) is int and 1<=level<=10:self.data['difficulty']=level
-                if isinstance(ids,list):self.data['rated_games']=[x for x in ids[-1000:] if isinstance(x,str)]
+                if source.get('schema_version') == SETTINGS_SCHEMA and isinstance(ids,list):
+                    self.data['rated_games']=[x for x in ids[-1000:] if isinstance(x,str)]
+                if source.get('schema_version') != SETTINGS_SCHEMA:
+                    self.save()  # one-time migration; subsequent rated results persist normally
         except (OSError,ValueError,TypeError):pass
 
     @property

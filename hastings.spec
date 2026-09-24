@@ -7,6 +7,7 @@ root=Path(SPECPATH)
 exe=root/'engine'/engine_filename()
 if not exe.is_file():raise FileNotFoundError('Engine for this platform is missing: '+str(exe))
 datas=[(str(root/'assets'),'assets'),(str(root/'engine'/'hastings.ini'),'engine'),
+       (str(root/'IN_GAME_RULES.md'),'.'),
        (str(root/'engine'/'COPYING.txt'),'engine'),
        (str(root/'engine'/'Fairy-Stockfish-fairy_sf_14.tar.gz'),'engine')]
 a=Analysis([str(root/'app.py')],pathex=[str(root)],binaries=[(str(exe),'engine')],

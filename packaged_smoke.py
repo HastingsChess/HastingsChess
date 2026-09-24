@@ -13,13 +13,20 @@ def run():
         app=App(root)
         try:
             app.settings=Settings(Path(temp)/'settings.json')
+            app.refresh()
             root.update()
             assert root.winfo_viewable(), 'Packaged GUI did not map a visible window'
             assert app.canvas.winfo_width()>200 and app.canvas.winfo_height()>200
             assert app.eval_canvas is None, 'Evaluation bar leaked into live game'
-            assert app.settings.norman_elo==1100 and SAXON_RATING==1066
+            assert app.settings.norman_elo==1066 and SAXON_RATING==1066
+            assert 'Normans — Elo 1066' in app.ratings.cget('text')
+            app.rules_button.invoke();root.update()
+            assert app.rules_window.winfo_viewable(),'Bundled Rules window did not open'
+            assert 'and it was Wednesday.' in (Path(__file__).resolve().parent/'IN_GAME_RULES.md').read_text(encoding='utf-8')
+            app.rules_window.destroy();app.show_rules();root.update()
+            assert app.rules_window.winfo_viewable(),'Rules window did not reopen'
             assert len(app.level_box['values'])==10
-            for level in (1,3,10):
+            for level in (1,3,4,10):
                 app.level_text.set(app.difficulty_label(level));app.difficulty_changed()
                 assert app.level.get()==level
             app.level_text.set(app.difficulty_label(1));app.difficulty_changed()
@@ -35,7 +42,7 @@ def run():
             assert app.g.side==0 and app.g.white_move==2,'Bundled Fairy opponent did not respond'
             assert app.eval_canvas is None,'Evaluation bar visible during live play'
             app.g._end('black','checkmate');app.refresh()
-            assert app.settings.norman_elo>1100
+            assert app.settings.norman_elo>1066
             assert Settings(app.settings.path).norman_elo==app.settings.norman_elo
             assert 'Saxons — Elo 1066' in app.ratings.cget('text')
             assert app.eval_canvas is None,'Evaluation bar visible before Replay'

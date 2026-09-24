@@ -72,12 +72,14 @@ class GuiTests(unittest.TestCase):
   self.app.load_replay_data({'format':'hastings-batch-2','games':[{'replay':one},{'replay':two}]})
   self.app.replay_selector.current(1);self.app.choose_replay()
   self.assertEqual(self.app.replay['seed'],11);self.assertEqual(self.app.replay_index,0)
- def test_ruleset_selector_for_new_game(self):
-  self.app.rules_mode.set('Experimental: any piece');self.app.new()
-  self.assertEqual(self.app.g.bonus_mode,'any_piece')
-  self.assertIn('any-piece bonus',self.app.status.cget('text'))
-  self.app.rules_mode.set('Knights + pawns');self.app.new()
-  self.assertEqual(self.app.g.bonus_mode,'knight_pawn')
+ def test_rules_window_and_standard_ruleset(self):
+  a=self.app;before=a.g.export();self.assertFalse(hasattr(a,'rules_box'))
+  a.rules_button.invoke();self.root.update()
+  self.assertTrue(a.rules_window.winfo_exists())
+  self.assertIn('and it was Wednesday.',a.rules_window.winfo_children()[0].winfo_children()[1].get('1.0','end'))
+  a.rules_window.destroy();a.show_rules();self.root.update()
+  self.assertTrue(a.rules_window.winfo_exists());self.assertEqual(a.g.export(),before)
+  a.new();self.assertEqual(a.g.bonus_mode,'knight_pawn')
  def test_game5_rescue_click_and_replay(self):
   import rules as r
   from tests import at
@@ -110,10 +112,10 @@ class GuiTests(unittest.TestCase):
    a.settings=Settings(Path(d)/'settings.json');a.level_text.set('7. Expert');a.difficulty_changed()
    self.assertEqual(Settings(a.settings.path).data['difficulty'],7)
    a.mode.set('Computer vs computer');a.mode_changed();a.g._end('black','checkmate');a.refresh()
-   self.assertEqual(Settings(a.settings.path).norman_elo,1100)
+   self.assertEqual(Settings(a.settings.path).norman_elo,1066)
    a.new();a.mode.set('Two humans');a.mode_changed();a.game_rated=True
    a.g._end('black','checkmate');a.refresh()
-   self.assertGreater(Settings(a.settings.path).norman_elo,1100)
+   self.assertGreater(Settings(a.settings.path).norman_elo,1066)
    self.assertIn('1066 → 1066 (+0)',a.rating_detail.cget('text'))
 
 if __name__=='__main__':unittest.main()

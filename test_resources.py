@@ -3,6 +3,7 @@ import tempfile,unittest
 from pathlib import Path
 from unittest.mock import patch
 import engine_uci
+import app
 
 class ResourceTests(unittest.TestCase):
  def test_platform_filenames(self):
@@ -17,5 +18,8 @@ class ResourceTests(unittest.TestCase):
    with patch.object(engine_uci,'BASE',base),patch.object(engine_uci,'engine_filename',return_value='fairy-stockfish.exe'):
     self.assertEqual(engine_uci.default_engine(),base/'engine'/'fairy-stockfish.exe')
     self.assertTrue((engine_uci.BASE/'engine'/'hastings.ini').is_file())
+ def test_bundled_rules_relative_to_application(self):
+  rules=app.ROOT/'IN_GAME_RULES.md'
+  self.assertIn('I am not a coder. I just had too much time on my hands and it was Wednesday.',rules.read_text(encoding='utf-8'))
 
 if __name__=='__main__':unittest.main()
