@@ -22,4 +22,4 @@ All paths to assets, variant and engine are relative to the packaged application
 
 When a packaged launch fails before the interface can show an error, the PyInstaller runtime hook records platform, architecture, resource/engine/config paths and the traceback in `launch-errors.log` under the same per-user Hastings Chess application-data folder. Normal successful runs do not write debug output.
 
-This Linux environment has run source-level tests and the real Linux engine only. See `VERIFICATION_REPORT.md` for exact outcomes and outstanding native-build checks.
+The current release was built and smoke-tested on native GitHub Windows x64 and macOS arm64 runners. See `VERIFICATION_REPORT.md` for exact results and remaining personal-machine checks.
