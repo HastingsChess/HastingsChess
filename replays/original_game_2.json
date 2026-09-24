@@ -1,0 +1,2331 @@
+{
+  "format": "hastings-chess-1",
+  "seed": 57215946,
+  "hazard": {
+    "20": 0.01,
+    "21": 0.03,
+    "22": 0.05,
+    "23": 0.07,
+    "24": 0.09,
+    "25": 0.1,
+    "26": 0.15,
+    "27": 0.25,
+    "28": 0.4,
+    "29": 0.6,
+    "30": 1.0
+  },
+  "events": [
+    {
+      "label": "The Saxons assemble. Nothing could possibly go wrong.",
+      "phase": "start",
+      "squares": [],
+      "board": "RNBQKBNRHPPPPPPH................................pppppppprnbqkbnr",
+      "side": 0,
+      "move": 1,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "1. Saxons: h2 \u2192 f4",
+      "phase": "ordinary",
+      "squares": [
+        15,
+        29
+      ],
+      "board": "RNBQKBNRHPPPPPP..............H..................pppppppprnbqkbnr",
+      "side": 0,
+      "move": 1,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "1... Normans: b8 \u2192 c6",
+      "phase": "ordinary",
+      "squares": [
+        57,
+        42
+      ],
+      "board": "RNBQKBNRHPPPPPP..............H............n.....ppppppppr.bqkbnr",
+      "side": 1,
+      "move": 1,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 2,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "2. Saxons: d2 \u2192 d4 (double)",
+      "phase": "ordinary",
+      "squares": [
+        11,
+        27
+      ],
+      "board": "RNBQKBNRHPP.PPP............P.H............n.....ppppppppr.bqkbnr",
+      "side": 0,
+      "move": 2,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": 19,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "2... Normans: g8 \u2192 f6",
+      "phase": "ordinary",
+      "squares": [
+        62,
+        45
+      ],
+      "board": "RNBQKBNRHPP.PPP............P.H............n..n..ppppppppr.bqkb.r",
+      "side": 1,
+      "move": 2,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "3. Saxons: a2 \u2192 c4",
+      "phase": "ordinary",
+      "squares": [
+        8,
+        26
+      ],
+      "board": "RNBQKBNR.PP.PPP...........HP.H............n..n..ppppppppr.bqkb.r",
+      "side": 0,
+      "move": 3,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 2,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "3... Normans: g7 \u2192 g5 (double)",
+      "phase": "ordinary",
+      "squares": [
+        54,
+        38
+      ],
+      "board": "RNBQKBNR.PP.PPP...........HP.H........p...n..n..pppppp.pr.bqkb.r",
+      "side": 1,
+      "move": 3,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": 46,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "4. Saxons: f4 \u00d7 g5",
+      "phase": "ordinary",
+      "squares": [
+        29,
+        38
+      ],
+      "board": "RNBQKBNR.PP.PPP...........HP..........H...n..n..pppppp.pr.bqkb.r",
+      "side": 0,
+      "move": 4,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "4... Normans: f6 \u2192 e4",
+      "phase": "ordinary",
+      "squares": [
+        45,
+        28
+      ],
+      "board": "RNBQKBNR.PP.PPP...........HPn.........H...n.....pppppp.pr.bqkb.r",
+      "side": 1,
+      "move": 4,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "5. Saxons: g5 \u2192 e3",
+      "phase": "ordinary",
+      "squares": [
+        38,
+        20
+      ],
+      "board": "RNBQKBNR.PP.PPP.....H.....HPn.............n.....pppppp.pr.bqkb.r",
+      "side": 0,
+      "move": 5,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 2,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "5... Normans: e4 \u2192 d6",
+      "phase": "ordinary",
+      "squares": [
+        28,
+        43
+      ],
+      "board": "RNBQKBNR.PP.PPP.....H.....HP..............nn....pppppp.pr.bqkb.r",
+      "side": 1,
+      "move": 5,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 3,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "6. Saxons: b2 \u2192 b3",
+      "phase": "ordinary",
+      "squares": [
+        9,
+        17
+      ],
+      "board": "RNBQKBNR..P.PPP..P..H.....HP..............nn....pppppp.pr.bqkb.r",
+      "side": 0,
+      "move": 6,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "6... Normans: d6 \u00d7 c4",
+      "phase": "ordinary",
+      "squares": [
+        43,
+        26
+      ],
+      "board": "RNBQKBNR..P.PPP..P..H.....nP..............n.....pppppp.pr.bqkb.r",
+      "side": 1,
+      "move": 6,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "7. Saxons: b3 \u00d7 c4",
+      "phase": "ordinary",
+      "squares": [
+        17,
+        26
+      ],
+      "board": "RNBQKBNR..P.PPP.....H.....PP..............n.....pppppp.pr.bqkb.r",
+      "side": 0,
+      "move": 7,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "7... Normans: f7 \u2192 f5 (double)",
+      "phase": "ordinary",
+      "squares": [
+        53,
+        37
+      ],
+      "board": "RNBQKBNR..P.PPP.....H.....PP.........p....n.....ppppp..pr.bqkb.r",
+      "side": 1,
+      "move": 7,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": 45,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "8. Saxons: d4 \u2192 d5",
+      "phase": "ordinary",
+      "squares": [
+        27,
+        35
+      ],
+      "board": "RNBQKBNR..P.PPP.....H.....P........P.p....n.....ppppp..pr.bqkb.r",
+      "side": 0,
+      "move": 8,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "8... Normans: c6 \u2192 e5",
+      "phase": "ordinary",
+      "squares": [
+        42,
+        36
+      ],
+      "board": "RNBQKBNR..P.PPP.....H.....P........Pnp..........ppppp..pr.bqkb.r",
+      "side": 1,
+      "move": 8,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "9. Saxons: g1 \u2192 f3",
+      "phase": "ordinary",
+      "squares": [
+        6,
+        21
+      ],
+      "board": "RNBQKB.R..P.PPP.....HN....P........Pnp..........ppppp..pr.bqkb.r",
+      "side": 0,
+      "move": 9,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 2,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "9... Normans: e5 \u00d7 c4",
+      "phase": "ordinary",
+      "squares": [
+        36,
+        26
+      ],
+      "board": "RNBQKB.R..P.PPP.....HN....n........P.p..........ppppp..pr.bqkb.r",
+      "side": 1,
+      "move": 9,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "10. Saxons: d1 \u2192 d3",
+      "phase": "ordinary",
+      "squares": [
+        3,
+        19
+      ],
+      "board": "RNB.KB.R..P.PPP....QHN....n........P.p..........ppppp..pr.bqkb.r",
+      "side": 0,
+      "move": 10,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "10... Normans: c4 \u00d7 e3",
+      "phase": "ordinary",
+      "squares": [
+        26,
+        20
+      ],
+      "board": "RNB.KB.R..P.PPP....QnN.............P.p..........ppppp..pr.bqkb.r",
+      "side": 1,
+      "move": 10,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "11. Saxons: d3 \u00d7 e3",
+      "phase": "ordinary",
+      "squares": [
+        19,
+        20
+      ],
+      "board": "RNB.KB.R..P.PPP.....QN.............P.p..........ppppp..pr.bqkb.r",
+      "side": 0,
+      "move": 11,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "11... Normans: b7 \u2192 b5 (double)",
+      "phase": "ordinary",
+      "squares": [
+        49,
+        33
+      ],
+      "board": "RNB.KB.R..P.PPP.....QN...........p.P.p..........p.ppp..pr.bqkb.r",
+      "side": 1,
+      "move": 11,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": 41,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "12. Saxons: e3 \u2192 f4",
+      "phase": "ordinary",
+      "squares": [
+        20,
+        29
+      ],
+      "board": "RNB.KB.R..P.PPP......N.......Q...p.P.p..........p.ppp..pr.bqkb.r",
+      "side": 0,
+      "move": 12,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "12... Normans: a7 \u2192 a5 (double)",
+      "phase": "ordinary",
+      "squares": [
+        48,
+        32
+      ],
+      "board": "RNB.KB.R..P.PPP......N.......Q..pp.P.p............ppp..pr.bqkb.r",
+      "side": 1,
+      "move": 12,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": 40,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "13. Saxons: e2 \u2192 e3",
+      "phase": "ordinary",
+      "squares": [
+        12,
+        20
+      ],
+      "board": "RNB.KB.R..P..PP.....PN.......Q..pp.P.p............ppp..pr.bqkb.r",
+      "side": 0,
+      "move": 13,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "13... Normans: a5 \u2192 a4",
+      "phase": "ordinary",
+      "squares": [
+        32,
+        24
+      ],
+      "board": "RNB.KB.R..P..PP.....PN..p....Q...p.P.p............ppp..pr.bqkb.r",
+      "side": 1,
+      "move": 13,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "14. Saxons: f1 \u00d7 b5",
+      "phase": "ordinary",
+      "squares": [
+        5,
+        33
+      ],
+      "board": "RNB.K..R..P..PP.....PN..p....Q...B.P.p............ppp..pr.bqkb.r",
+      "side": 0,
+      "move": 14,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "14... Normans: c7 \u2192 c5 (double)",
+      "phase": "ordinary",
+      "squares": [
+        50,
+        34
+      ],
+      "board": "RNB.K..R..P..PP.....PN..p....Q...BpP.p.............pp..pr.bqkb.r",
+      "side": 1,
+      "move": 14,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": 42,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "15. Saxons: d5 \u2192 c6 (ep)",
+      "phase": "ordinary",
+      "squares": [
+        35,
+        42
+      ],
+      "board": "RNB.K..R..P..PP.....PN..p....Q...B...p....P........pp..pr.bqkb.r",
+      "side": 0,
+      "move": 15,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "15... Normans: d7 \u00d7 c6",
+      "phase": "ordinary",
+      "squares": [
+        51,
+        42
+      ],
+      "board": "RNB.K..R..P..PP.....PN..p....Q...B...p....p.........p..pr.bqkb.r",
+      "side": 1,
+      "move": 15,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "16. Saxons: b5 \u00d7 c6",
+      "phase": "ordinary",
+      "squares": [
+        33,
+        42
+      ],
+      "board": "RNB.K..R..P..PP.....PN..p....Q.......p....B.........p..pr.bqkb.r",
+      "side": 0,
+      "move": 16,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "16... Normans: c8 \u2192 d7",
+      "phase": "ordinary",
+      "squares": [
+        58,
+        51
+      ],
+      "board": "RNB.K..R..P..PP.....PN..p....Q.......p....B........bp..pr..qkb.r",
+      "side": 1,
+      "move": 16,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": true
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "17. Saxons: c6 \u00d7 a8",
+      "phase": "ordinary",
+      "squares": [
+        42,
+        56
+      ],
+      "board": "RNB.K..R..P..PP.....PN..p....Q.......p.............bp..pB..qkb.r",
+      "side": 0,
+      "move": 17,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "17... Normans: d8 \u00d7 a8",
+      "phase": "ordinary",
+      "squares": [
+        59,
+        56
+      ],
+      "board": "RNB.K..R..P..PP.....PN..p....Q.......p.............bp..pq...kb.r",
+      "side": 1,
+      "move": 17,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": true,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "18. Saxons: a1 \u00d7 a4",
+      "phase": "ordinary",
+      "squares": [
+        0,
+        24
+      ],
+      "board": ".NB.K..R..P..PP.....PN..R....Q.......p.............bp..pq...kb.r",
+      "side": 0,
+      "move": 18,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "18... Normans: d7 \u00d7 a4",
+      "phase": "ordinary",
+      "squares": [
+        51,
+        24
+      ],
+      "board": ".NB.K..R..P..PP.....PN..b....Q.......p..............p..pq...kb.r",
+      "side": 1,
+      "move": 18,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": true,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "19. Saxons: e1 \u2192 f1",
+      "phase": "ordinary",
+      "squares": [
+        4,
+        5
+      ],
+      "board": ".NB..K.R..P..PP.....PN..b....Q.......p..............p..pq...kb.r",
+      "side": 0,
+      "move": 19,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "19... Normans: a4 \u2192 b5",
+      "phase": "ordinary",
+      "squares": [
+        24,
+        33
+      ],
+      "board": ".NB..K.R..P..PP.....PN.......Q...b...p..............p..pq...kb.r",
+      "side": 1,
+      "move": 19,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 2,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "20. Saxons: f1 \u2192 g1",
+      "phase": "ordinary",
+      "squares": [
+        5,
+        6
+      ],
+      "board": ".NB...KR..P..PP.....PN.......Q...b...p..............p..pq...kb.r",
+      "side": 0,
+      "move": 20,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 3,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "20... Normans: a8 \u2192 d5",
+      "phase": "ordinary",
+      "squares": [
+        56,
+        35
+      ],
+      "board": ".NB...KR..P..PP.....PN.......Q...b.q.p..............p..p....kb.r",
+      "side": 1,
+      "move": 20,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 4,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "21. Saxons: b1 \u2192 c3",
+      "phase": "ordinary",
+      "squares": [
+        1,
+        18
+      ],
+      "board": "..B...KR..P..PP...N.PN.......Q...b.q.p..............p..p....kb.r",
+      "side": 0,
+      "move": 21,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 5,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "21... Normans: d5 \u2192 c5",
+      "phase": "ordinary",
+      "squares": [
+        35,
+        34
+      ],
+      "board": "..B...KR..P..PP...N.PN.......Q...bq..p..............p..p....kb.r",
+      "side": 1,
+      "move": 21,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 6,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "22. Saxons: c3 \u00d7 b5",
+      "phase": "ordinary",
+      "squares": [
+        18,
+        33
+      ],
+      "board": "..B...KR..P..PP.....PN.......Q...Nq..p..............p..p....kb.r",
+      "side": 0,
+      "move": 22,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "22... Normans: c5 \u00d7 b5",
+      "phase": "ordinary",
+      "squares": [
+        34,
+        33
+      ],
+      "board": "..B...KR..P..PP.....PN.......Q...q...p..............p..p....kb.r",
+      "side": 1,
+      "move": 22,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "23. Saxons: f3 \u2192 g5",
+      "phase": "ordinary",
+      "squares": [
+        21,
+        38
+      ],
+      "board": "..B...KR..P..PP.....P........Q...q...pN.............p..p....kb.r",
+      "side": 0,
+      "move": 23,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "23... Normans: h7 \u2192 h5 (double)",
+      "phase": "ordinary",
+      "squares": [
+        55,
+        39
+      ],
+      "board": "..B...KR..P..PP.....P........Q...q...pNp............p.......kb.r",
+      "side": 1,
+      "move": 23,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": 47,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "24. Saxons: c2 \u2192 c4 (double)",
+      "phase": "ordinary",
+      "squares": [
+        10,
+        26
+      ],
+      "board": "..B...KR.....PP.....P.....P..Q...q...pNp............p.......kb.r",
+      "side": 0,
+      "move": 24,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": 18,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "24... Normans: b5 \u2192 c5",
+      "phase": "ordinary",
+      "squares": [
+        33,
+        34
+      ],
+      "board": "..B...KR.....PP.....P.....P..Q....q..pNp............p.......kb.r",
+      "side": 1,
+      "move": 24,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "25. Saxons: c1 \u2192 b2",
+      "phase": "ordinary",
+      "squares": [
+        2,
+        9
+      ],
+      "board": "......KR.B...PP.....P.....P..Q....q..pNp............p.......kb.r",
+      "side": 0,
+      "move": 25,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": true,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 2,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "25... Normans: h8 \u2192 h6",
+      "phase": "ordinary",
+      "squares": [
+        63,
+        47
+      ],
+      "board": "......KR.B...PP.....P.....P..Q....q..pNp.......r....p.......kb..",
+      "side": 1,
+      "move": 25,
+      "bonus": 0,
+      "charged": false,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 3,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "26. THE SAXON CHARGE! The dice hate somebody.",
+      "phase": "charge",
+      "squares": [],
+      "board": "......KR.B...PP.....P.....P..Q....q..pNp.......r....p.......kb..",
+      "side": 0,
+      "move": 26,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 3,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "26. Saxon pawn charge: c4 \u2192 c5 (pushed)",
+      "phase": "charge",
+      "squares": [
+        26,
+        34,
+        42
+      ],
+      "board": "......KR.B...PP.....P........Q....P..pNp..q....r....p.......kb..",
+      "side": 0,
+      "move": 26,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "26. Saxon pawn charge: e3 \u2192 e6 (advance)",
+      "phase": "charge",
+      "squares": [
+        20,
+        44
+      ],
+      "board": "......KR.B...PP..............Q....P..pNp..q.P..r....p.......kb..",
+      "side": 0,
+      "move": 26,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "26. Saxon pawn charge: f2 \u2192 f3 (blocked by friend)",
+      "phase": "charge",
+      "squares": [
+        13,
+        21
+      ],
+      "board": "......KR.B....P......P.......Q....P..pNp..q.P..r....p.......kb..",
+      "side": 0,
+      "move": 26,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "26. Saxon pawn charge: g2 \u2192 g5 (pushed)",
+      "phase": "charge",
+      "squares": [
+        14,
+        38,
+        46
+      ],
+      "board": "......KR.B...........P.......Q....P..pPp..q.P.Nr....p.......kb..",
+      "side": 0,
+      "move": 26,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "26... Normans: h6 \u00d7 g6",
+      "phase": "response",
+      "squares": [
+        47,
+        46
+      ],
+      "board": "......KR.B...........P.......Q....P..pPp..q.P.r.....p.......kb..",
+      "side": 1,
+      "move": 26,
+      "bonus": 2,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "Bonus knight action unavailable (2 remaining).",
+      "phase": "bonus",
+      "squares": [],
+      "board": "......KR.B...........P.......Q....P..pPp..q.P.r.....p.......kb..",
+      "side": 1,
+      "move": 26,
+      "bonus": 2,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "Bonus knight action unavailable (1 remaining).",
+      "phase": "bonus",
+      "squares": [],
+      "board": "......KR.B...........P.......Q....P..pPp..q.P.r.....p.......kb..",
+      "side": 1,
+      "move": 26,
+      "bonus": 1,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "27. Saxons: f4 \u00d7 f5",
+      "phase": "ordinary",
+      "squares": [
+        29,
+        37
+      ],
+      "board": "......KR.B...........P............P..QPp..q.P.r.....p.......kb..",
+      "side": 0,
+      "move": 27,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "27... Normans: g6 \u00d7 e6",
+      "phase": "ordinary",
+      "squares": [
+        46,
+        44
+      ],
+      "board": "......KR.B...........P............P..QPp..q.r.......p.......kb..",
+      "side": 1,
+      "move": 27,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "28. Saxons: h1 \u00d7 h5",
+      "phase": "ordinary",
+      "squares": [
+        7,
+        39
+      ],
+      "board": "......K..B...........P............P..QPR..q.r.......p.......kb..",
+      "side": 0,
+      "move": 28,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "28... Normans: e6 \u2192 e1",
+      "phase": "ordinary",
+      "squares": [
+        44,
+        4
+      ],
+      "board": "....r.K..B...........P............P..QPR..q.........p.......kb..",
+      "side": 1,
+      "move": 28,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "29. Saxons: g1 \u2192 g2",
+      "phase": "ordinary",
+      "squares": [
+        6,
+        14
+      ],
+      "board": "....r....B....K......P............P..QPR..q.........p.......kb..",
+      "side": 0,
+      "move": 29,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 2,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "29... Normans: e1 \u2192 e2",
+      "phase": "ordinary",
+      "squares": [
+        4,
+        12
+      ],
+      "board": ".........B..r.K......P............P..QPR..q.........p.......kb..",
+      "side": 1,
+      "move": 29,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 3,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "30. Saxons: g2 \u2192 g3",
+      "phase": "ordinary",
+      "squares": [
+        14,
+        22
+      ],
+      "board": ".........B..r........PK...........P..QPR..q.........p.......kb..",
+      "side": 0,
+      "move": 30,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 4,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "30... Normans: e2 \u00d7 b2",
+      "phase": "ordinary",
+      "squares": [
+        12,
+        9
+      ],
+      "board": ".........r...........PK...........P..QPR..q.........p.......kb..",
+      "side": 1,
+      "move": 30,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "31. Saxons: h5 \u2192 h8",
+      "phase": "ordinary",
+      "squares": [
+        39,
+        63
+      ],
+      "board": ".........r...........PK...........P..QP...q.........p.......kb.R",
+      "side": 0,
+      "move": 31,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "31... Normans: c6 \u2192 c7",
+      "phase": "ordinary",
+      "squares": [
+        42,
+        50
+      ],
+      "board": ".........r...........PK...........P..QP...........q.p.......kb.R",
+      "side": 1,
+      "move": 31,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 2,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "32. Saxons: f3 \u2192 f4",
+      "phase": "ordinary",
+      "squares": [
+        21,
+        29
+      ],
+      "board": ".........r............K......P....P..QP...........q.p.......kb.R",
+      "side": 0,
+      "move": 32,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "32... Normans: b2 \u2192 b3",
+      "phase": "ordinary",
+      "squares": [
+        9,
+        17
+      ],
+      "board": ".................r....K......P....P..QP...........q.p.......kb.R",
+      "side": 1,
+      "move": 32,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "33. Saxons: g3 \u2192 h4",
+      "phase": "ordinary",
+      "squares": [
+        22,
+        31
+      ],
+      "board": ".................r...........P.K..P..QP...........q.p.......kb.R",
+      "side": 0,
+      "move": 33,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 2,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "33... Normans: e7 \u2192 e5 (double)",
+      "phase": "ordinary",
+      "squares": [
+        52,
+        36
+      ],
+      "board": ".................r...........P.K..P.pQP...........q.........kb.R",
+      "side": 1,
+      "move": 33,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": 44,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "34. Saxons: f5 \u00d7 f8",
+      "phase": "ordinary",
+      "squares": [
+        37,
+        61
+      ],
+      "board": ".................r...........P.K..P.p.P...........q.........kQ.R",
+      "side": 0,
+      "move": 34,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "34... Normans: e8 \u2192 d7",
+      "phase": "ordinary",
+      "squares": [
+        60,
+        51
+      ],
+      "board": ".................r...........P.K..P.p.P...........qk.........Q.R",
+      "side": 1,
+      "move": 34,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "35. Saxons: h8 \u2192 h7",
+      "phase": "ordinary",
+      "squares": [
+        63,
+        55
+      ],
+      "board": ".................r...........P.K..P.p.P...........qk...R.....Q..",
+      "side": 0,
+      "move": 35,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 2,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "35... Normans: d7 \u2192 c6",
+      "phase": "ordinary",
+      "squares": [
+        51,
+        42
+      ],
+      "board": ".................r...........P.K..P.p.P...k.......q....R.....Q..",
+      "side": 1,
+      "move": 35,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 3,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "36. Saxons: h7 \u00d7 c7",
+      "phase": "ordinary",
+      "squares": [
+        55,
+        50
+      ],
+      "board": ".................r...........P.K..P.p.P...k.......R..........Q..",
+      "side": 0,
+      "move": 36,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "36... Normans: c6 \u00d7 c7",
+      "phase": "ordinary",
+      "squares": [
+        42,
+        50
+      ],
+      "board": ".................r...........P.K..P.p.P...........k..........Q..",
+      "side": 1,
+      "move": 36,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "37. Saxons: g5 \u2192 g6",
+      "phase": "ordinary",
+      "squares": [
+        38,
+        46
+      ],
+      "board": ".................r...........P.K..P.p.........P...k..........Q..",
+      "side": 0,
+      "move": 37,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "37... Normans: e5 \u2192 e4",
+      "phase": "ordinary",
+      "squares": [
+        36,
+        28
+      ],
+      "board": ".................r..........pP.K..P...........P...k..........Q..",
+      "side": 1,
+      "move": 37,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "38. Saxons: f8 \u2192 e7",
+      "phase": "ordinary",
+      "squares": [
+        61,
+        52
+      ],
+      "board": ".................r..........pP.K..P...........P...k.Q...........",
+      "side": 0,
+      "move": 38,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "38... Normans: c7 \u2192 b8",
+      "phase": "ordinary",
+      "squares": [
+        50,
+        57
+      ],
+      "board": ".................r..........pP.K..P...........P.....Q....k......",
+      "side": 1,
+      "move": 38,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 2,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "39. Saxons: e7 \u00d7 e4",
+      "phase": "ordinary",
+      "squares": [
+        52,
+        28
+      ],
+      "board": ".................r..........QP.K..P...........P..........k......",
+      "side": 0,
+      "move": 39,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "39... Normans: b3 \u2192 c3",
+      "phase": "ordinary",
+      "squares": [
+        17,
+        18
+      ],
+      "board": "..................r.........QP.K..P...........P..........k......",
+      "side": 1,
+      "move": 39,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "40. Saxons: g6 \u2192 g7",
+      "phase": "ordinary",
+      "squares": [
+        46,
+        54
+      ],
+      "board": "..................r.........QP.K..P...................P..k......",
+      "side": 0,
+      "move": 40,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "40... Normans: c3 \u2192 g3",
+      "phase": "ordinary",
+      "squares": [
+        18,
+        22
+      ],
+      "board": "......................r.....QP.K..P...................P..k......",
+      "side": 1,
+      "move": 40,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "41. Saxons: h4 \u00d7 g3",
+      "phase": "ordinary",
+      "squares": [
+        31,
+        22
+      ],
+      "board": "......................K.....QP....P...................P..k......",
+      "side": 0,
+      "move": 41,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "41... Normans: b8 \u2192 a7",
+      "phase": "ordinary",
+      "squares": [
+        57,
+        48
+      ],
+      "board": "......................K.....QP....P.............k.....P.........",
+      "side": 1,
+      "move": 41,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "42. Saxons: g7 \u2192 g8=Q",
+      "phase": "ordinary",
+      "squares": [
+        54,
+        62
+      ],
+      "board": "......................K.....QP....P.............k.............Q.",
+      "side": 0,
+      "move": 42,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 0,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "42... Normans: a7 \u2192 a6",
+      "phase": "ordinary",
+      "squares": [
+        48,
+        40
+      ],
+      "board": "......................K.....QP....P.....k.....................Q.",
+      "side": 1,
+      "move": 42,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 1,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "43. Saxons: e4 \u2192 a4",
+      "phase": "ordinary",
+      "squares": [
+        28,
+        24
+      ],
+      "board": "......................K.Q....P....P.....k.....................Q.",
+      "side": 0,
+      "move": 43,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 2,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "43... Normans: a6 \u2192 b7",
+      "phase": "ordinary",
+      "squares": [
+        40,
+        49
+      ],
+      "board": "......................K.Q....P....P..............k............Q.",
+      "side": 1,
+      "move": 43,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 3,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "44. Saxons: g8 \u2192 g6",
+      "phase": "ordinary",
+      "squares": [
+        62,
+        46
+      ],
+      "board": "......................K.Q....P....P...........Q..k..............",
+      "side": 0,
+      "move": 44,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 4,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "44... Normans: b7 \u2192 c8",
+      "phase": "ordinary",
+      "squares": [
+        49,
+        58
+      ],
+      "board": "......................K.Q....P....P...........Q...........k.....",
+      "side": 1,
+      "move": 44,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 5,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "45. Saxons: a4 \u2192 e4",
+      "phase": "ordinary",
+      "squares": [
+        24,
+        28
+      ],
+      "board": "......................K.....QP....P...........Q...........k.....",
+      "side": 0,
+      "move": 45,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 6,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "45... Normans: c8 \u2192 b8",
+      "phase": "ordinary",
+      "squares": [
+        58,
+        57
+      ],
+      "board": "......................K.....QP....P...........Q..........k......",
+      "side": 1,
+      "move": 45,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 7,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "46. Saxons: e4 \u2192 e7",
+      "phase": "ordinary",
+      "squares": [
+        28,
+        52
+      ],
+      "board": "......................K......P....P...........Q.....Q....k......",
+      "side": 0,
+      "move": 46,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 8,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "46... Normans: b8 \u2192 a8",
+      "phase": "ordinary",
+      "squares": [
+        57,
+        56
+      ],
+      "board": "......................K......P....P...........Q.....Q...k.......",
+      "side": 1,
+      "move": 46,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 9,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "47. Saxons: g6 \u2192 g8",
+      "phase": "ordinary",
+      "squares": [
+        46,
+        62
+      ],
+      "board": "......................K......P....P.................Q...k.....Q.",
+      "side": 0,
+      "move": 47,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 10,
+      "result": null,
+      "reason": ""
+    },
+    {
+      "label": "Game over: checkmate (white)",
+      "phase": "end",
+      "squares": [],
+      "board": "......................K......P....P.................Q...k.....Q.",
+      "side": 1,
+      "move": 47,
+      "bonus": 0,
+      "charged": true,
+      "castle": {
+        "K": false,
+        "Q": false,
+        "k": false,
+        "q": false
+      },
+      "ep": -1,
+      "hm": 10,
+      "result": "white",
+      "reason": "checkmate"
+    }
+  ],
+  "winner": "white",
+  "reason": "checkmate"
+}

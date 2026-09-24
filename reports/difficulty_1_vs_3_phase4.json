@@ -1,0 +1,89 @@
+{
+  "levels": {
+    "1": [
+      0.16,
+      2,
+      400
+    ],
+    "3": [
+      1.6,
+      5,
+      10000
+    ]
+  },
+  "limit": 38,
+  "games": [
+    {
+      "seed": 42,
+      "strong_side": "white",
+      "winner": "black",
+      "reason": "checkmate",
+      "charge": true,
+      "engine_calls": 103,
+      "seconds": 1.0810474849999991
+    },
+    {
+      "seed": 42,
+      "strong_side": "black",
+      "winner": "black",
+      "reason": "checkmate",
+      "charge": true,
+      "engine_calls": 119,
+      "seconds": 1.0606827179999527
+    },
+    {
+      "seed": 43,
+      "strong_side": "white",
+      "winner": "white",
+      "reason": "checkmate",
+      "charge": false,
+      "engine_calls": 81,
+      "seconds": 1.0131161890001295
+    },
+    {
+      "seed": 43,
+      "strong_side": "black",
+      "winner": null,
+      "reason": "unfinished (move limit)",
+      "charge": true,
+      "engine_calls": 265,
+      "seconds": 3.9828344219999963
+    },
+    {
+      "seed": 44,
+      "strong_side": "white",
+      "winner": "white",
+      "reason": "checkmate",
+      "charge": false,
+      "engine_calls": 81,
+      "seconds": 1.0168468839999605
+    },
+    {
+      "seed": 44,
+      "strong_side": "black",
+      "winner": null,
+      "reason": "unfinished (move limit)",
+      "charge": true,
+      "engine_calls": 211,
+      "seconds": 2.7977616190000845
+    },
+    {
+      "seed": 45,
+      "strong_side": "white",
+      "winner": "white",
+      "reason": "checkmate",
+      "charge": false,
+      "engine_calls": 81,
+      "seconds": 1.136708914999872
+    },
+    {
+      "seed": 45,
+      "strong_side": "black",
+      "winner": null,
+      "reason": "unfinished (move limit)",
+      "charge": true,
+      "engine_calls": 192,
+      "seconds": 2.157452420000027
+    }
+  ]
+}

@@ -1,0 +1,3012 @@
+{
+  "format": "hastings-batch-3",
+  "ruleset": "hastings-3-king-housecarl-knight_pawn",
+  "settings": {
+    "count": 2,
+    "seed": 42,
+    "limit": 60,
+    "level": 1,
+    "seconds": 0.12,
+    "white": "light",
+    "black": "fairy",
+    "nodes": 1200,
+    "bonus_mode": "knight_pawn"
+  },
+  "completed_games": 2,
+  "outcomes": {
+    "checkmate: black": 2
+  },
+  "victory_phase": {
+    "before charge": 2
+  },
+  "charge_move_histogram": {},
+  "charge_not_reached": 2,
+  "knights_at_charge": {},
+  "mean_knights_at_charge": null,
+  "engine_calls": 30,
+  "total_thinking_seconds": 2.4560446889995546,
+  "mean_thinking_seconds": 0.04093407814999258,
+  "max_thinking_seconds": 0.1419654299998001,
+  "games": [
+    {
+      "seed": 42,
+      "white": "light",
+      "black": "fairy",
+      "winner": "black",
+      "reason": "checkmate",
+      "victory_phase": "before charge",
+      "charge_move": null,
+      "knights_at_charge": null,
+      "housecarls_at_charge": null,
+      "knights_at_end": 2,
+      "housecarls_at_end": 1,
+      "housecarl_captures": 0,
+      "housecarls_captured": 1,
+      "charge_material_delta": null,
+      "charge_positional_delta": null,
+      "normal_response_delta": null,
+      "knight_bonus_delta": null,
+      "full_sequence_delta": null,
+      "thinking": [
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.009257854999987103,
+          "nodes": 20,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.003818283999862615,
+          "score_cp": -600.8,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.016443791000028796,
+          "nodes": 23,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.002685300000166535,
+          "score_cp": -552.8666666666667,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.016911588999846572,
+          "nodes": 26,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1106,
+          "seconds": 0.002298659999951269,
+          "score_cp": -591.6,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.032758137999962855,
+          "nodes": 33,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1105,
+          "seconds": 0.002439245999994455,
+          "score_cp": -535.7333333333333,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.04170226500013996,
+          "nodes": 36,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.002470147999929395,
+          "score_cp": -369.3333333333333,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.1203701499998715,
+          "nodes": 37,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.0026963249999880645,
+          "score_cp": -137.6,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.12030015499999536,
+          "nodes": 20,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.0024919170000430313,
+          "score_cp": -38.0,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.003953847000047972,
+          "nodes": 3,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1108,
+          "seconds": 0.0023942160000842705,
+          "score_cp": -68.46666666666667,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.12028932599992004,
+          "nodes": 42,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.0028376940001635376,
+          "score_cp": 200.0,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.12028667000004134,
+          "nodes": 30,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1105,
+          "seconds": 0.0028505860000223038,
+          "score_cp": 323.0,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.08708488800016312,
+          "nodes": 36,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.009134649000088757,
+          "score_cp": 855.2666666666667,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.12029200899996795,
+          "nodes": 27,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.002553609999949913,
+          "score_cp": 671.0,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.12030943399986427,
+          "nodes": 23,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.0031226539999806846,
+          "score_cp": 703.3333333333334,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.1205028049998873,
+          "nodes": 15,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1115,
+          "seconds": 0.0026357560000178637,
+          "score_cp": 1169.0,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.12034102699999494,
+          "nodes": 12,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.0025280820000261883,
+          "score_cp": 99899.0,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        }
+      ],
+      "replay": {
+        "format": "hastings-chess-3",
+        "ruleset": "hastings-3-king-housecarl-knight_pawn",
+        "bonus_mode": "knight_pawn",
+        "seed": 42,
+        "hazard": {
+          "20": 0.01,
+          "21": 0.03,
+          "22": 0.05,
+          "23": 0.07,
+          "24": 0.09,
+          "25": 0.1,
+          "26": 0.15,
+          "27": 0.25,
+          "28": 0.4,
+          "29": 0.6,
+          "30": 1.0
+        },
+        "events": [
+          {
+            "label": "The Saxons assemble. Nothing could possibly go wrong.",
+            "phase": "start",
+            "squares": [],
+            "board": "RNBQKBNRHPPPPPPH................................pppppppprnbqkbnr",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 0,
+            "side": 0,
+            "move": 1,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": null,
+            "result": null,
+            "reason": ""
+          },
+          {
+            "label": "1. Saxons: b1 \u2192 c3",
+            "phase": "ordinary",
+            "squares": [
+              1,
+              18
+            ],
+            "board": "R.BQKBNRHPPPPPPH..N.............................pppppppprnbqkbnr",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 1,
+            "side": 1,
+            "move": 1,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 1,
+            "result": null,
+            "reason": "",
+            "action": [
+              1,
+              18,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 1,
+            "piece": "N",
+            "captured": "."
+          },
+          {
+            "label": "1... Normans: g8 \u2192 f6",
+            "phase": "ordinary",
+            "squares": [
+              62,
+              45
+            ],
+            "board": "R.BQKBNRHPPPPPPH..N..........................n..pppppppprnbqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 2,
+            "turn": 2,
+            "side": 0,
+            "move": 2,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 1,
+            "result": null,
+            "reason": "",
+            "action": [
+              62,
+              45,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 1,
+            "piece": "n",
+            "captured": "."
+          },
+          {
+            "label": "2. Saxons: g1 \u2192 f3",
+            "phase": "ordinary",
+            "squares": [
+              6,
+              21
+            ],
+            "board": "R.BQKB.RHPPPPPPH..N..N.......................n..pppppppprnbqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 3,
+            "turn": 3,
+            "side": 1,
+            "move": 2,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 2,
+            "result": null,
+            "reason": "",
+            "action": [
+              6,
+              21,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 2,
+            "piece": "N",
+            "captured": "."
+          },
+          {
+            "label": "2... Normans: d7 \u2192 d5 (double)",
+            "phase": "ordinary",
+            "squares": [
+              51,
+              35
+            ],
+            "board": "R.BQKB.RHPPPPPPH..N..N.............p.........n..ppp.pppprnbqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": 43,
+            "hm": 0,
+            "turn": 4,
+            "side": 0,
+            "move": 3,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 2,
+            "result": null,
+            "reason": "",
+            "action": [
+              51,
+              35,
+              "",
+              "double"
+            ],
+            "actor": 1,
+            "action_move": 2,
+            "piece": "p",
+            "captured": "."
+          },
+          {
+            "label": "3. Saxons: h2 \u2192 g3",
+            "phase": "ordinary",
+            "squares": [
+              15,
+              22
+            ],
+            "board": "R.BQKB.RHPPPPPP...N..NH............p.........n..ppp.pppprnbqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 5,
+            "side": 1,
+            "move": 3,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 3,
+            "result": null,
+            "reason": "",
+            "action": [
+              15,
+              22,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 3,
+            "piece": "H",
+            "captured": "."
+          },
+          {
+            "label": "3... Normans: b8 \u2192 c6",
+            "phase": "ordinary",
+            "squares": [
+              57,
+              42
+            ],
+            "board": "R.BQKB.RHPPPPPP...N..NH............p......n..n..ppp.ppppr.bqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 2,
+            "turn": 6,
+            "side": 0,
+            "move": 4,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 3,
+            "result": null,
+            "reason": "",
+            "action": [
+              57,
+              42,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 3,
+            "piece": "n",
+            "captured": "."
+          },
+          {
+            "label": "4. Saxons: g3 \u2192 f4",
+            "phase": "ordinary",
+            "squares": [
+              22,
+              29
+            ],
+            "board": "R.BQKB.RHPPPPPP...N..N.......H.....p......n..n..ppp.ppppr.bqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 3,
+            "turn": 7,
+            "side": 1,
+            "move": 4,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 4,
+            "result": null,
+            "reason": "",
+            "action": [
+              22,
+              29,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 4,
+            "piece": "H",
+            "captured": "."
+          },
+          {
+            "label": "4... Normans: h7 \u2192 h6",
+            "phase": "ordinary",
+            "squares": [
+              55,
+              47
+            ],
+            "board": "R.BQKB.RHPPPPPP...N..N.......H.....p......n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 8,
+            "side": 0,
+            "move": 5,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 4,
+            "result": null,
+            "reason": "",
+            "action": [
+              55,
+              47,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 4,
+            "piece": "p",
+            "captured": "."
+          },
+          {
+            "label": "5. Saxons: a2 \u2192 b3",
+            "phase": "ordinary",
+            "squares": [
+              8,
+              17
+            ],
+            "board": "R.BQKB.R.PPPPPP..HN..N.......H.....p......n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 9,
+            "side": 1,
+            "move": 5,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 5,
+            "result": null,
+            "reason": "",
+            "action": [
+              8,
+              17,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 5,
+            "piece": "H",
+            "captured": "."
+          },
+          {
+            "label": "5... Normans: d5 \u2192 d4",
+            "phase": "ordinary",
+            "squares": [
+              35,
+              27
+            ],
+            "board": "R.BQKB.R.PPPPPP..HN..N.....p.H............n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 10,
+            "side": 0,
+            "move": 6,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 5,
+            "result": null,
+            "reason": "",
+            "action": [
+              35,
+              27,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 5,
+            "piece": "p",
+            "captured": "."
+          },
+          {
+            "label": "6. Saxons: a1 \u2192 a2",
+            "phase": "ordinary",
+            "squares": [
+              0,
+              8
+            ],
+            "board": "..BQKB.RRPPPPPP..HN..N.....p.H............n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": true,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 11,
+            "side": 1,
+            "move": 6,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 6,
+            "result": null,
+            "reason": "",
+            "action": [
+              0,
+              8,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 6,
+            "piece": "R",
+            "captured": "."
+          },
+          {
+            "label": "6... Normans: d4 \u00d7 c3",
+            "phase": "ordinary",
+            "squares": [
+              27,
+              18
+            ],
+            "board": "..BQKB.RRPPPPPP..Hp..N.......H............n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": true,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 12,
+            "side": 0,
+            "move": 7,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 6,
+            "result": null,
+            "reason": "",
+            "action": [
+              27,
+              18,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 6,
+            "piece": "p",
+            "captured": "N"
+          },
+          {
+            "label": "7. Saxons: h1 \u2192 h2",
+            "phase": "ordinary",
+            "squares": [
+              7,
+              15
+            ],
+            "board": "..BQKB..RPPPPPPR.Hp..N.......H............n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 13,
+            "side": 1,
+            "move": 7,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 7,
+            "result": null,
+            "reason": "",
+            "action": [
+              7,
+              15,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 7,
+            "piece": "R",
+            "captured": "."
+          },
+          {
+            "label": "7... Normans: c3 \u00d7 d2",
+            "phase": "ordinary",
+            "squares": [
+              18,
+              11
+            ],
+            "board": "..BQKB..RPPpPPPR.H...N.......H............n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 14,
+            "side": 0,
+            "move": 8,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 7,
+            "result": null,
+            "reason": "",
+            "action": [
+              18,
+              11,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 7,
+            "piece": "p",
+            "captured": "P"
+          },
+          {
+            "label": "8. Saxons: c1 \u00d7 d2",
+            "phase": "ordinary",
+            "squares": [
+              2,
+              11
+            ],
+            "board": "...QKB..RPPBPPPR.H...N.......H............n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 15,
+            "side": 1,
+            "move": 8,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 8,
+            "result": null,
+            "reason": "",
+            "action": [
+              2,
+              11,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 8,
+            "piece": "B",
+            "captured": "p"
+          },
+          {
+            "label": "8... Normans: d8 \u2192 d6",
+            "phase": "ordinary",
+            "squares": [
+              59,
+              43
+            ],
+            "board": "...QKB..RPPBPPPR.H...N.......H............nq.n.pppp.ppp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 16,
+            "side": 0,
+            "move": 9,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 8,
+            "result": null,
+            "reason": "",
+            "action": [
+              59,
+              43,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 8,
+            "piece": "q",
+            "captured": "."
+          },
+          {
+            "label": "9. Saxons: d1 \u2192 c1",
+            "phase": "ordinary",
+            "squares": [
+              3,
+              2
+            ],
+            "board": "..Q.KB..RPPBPPPR.H...N.......H............nq.n.pppp.ppp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 2,
+            "turn": 17,
+            "side": 1,
+            "move": 9,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 9,
+            "result": null,
+            "reason": "",
+            "action": [
+              3,
+              2,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 9,
+            "piece": "Q",
+            "captured": "."
+          },
+          {
+            "label": "9... Normans: e7 \u2192 e5 (double)",
+            "phase": "ordinary",
+            "squares": [
+              52,
+              36
+            ],
+            "board": "..Q.KB..RPPBPPPR.H...N.......H......p.....nq.n.pppp..pp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": 44,
+            "hm": 0,
+            "turn": 18,
+            "side": 0,
+            "move": 10,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 9,
+            "result": null,
+            "reason": "",
+            "action": [
+              52,
+              36,
+              "",
+              "double"
+            ],
+            "actor": 1,
+            "action_move": 9,
+            "piece": "p",
+            "captured": "."
+          },
+          {
+            "label": "10. Saxons: c1 \u2192 d1",
+            "phase": "ordinary",
+            "squares": [
+              2,
+              3
+            ],
+            "board": "...QKB..RPPBPPPR.H...N.......H......p.....nq.n.pppp..pp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 19,
+            "side": 1,
+            "move": 10,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 10,
+            "result": null,
+            "reason": "",
+            "action": [
+              2,
+              3,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 10,
+            "piece": "Q",
+            "captured": "."
+          },
+          {
+            "label": "10... Normans: e5 \u00d7 f4",
+            "phase": "ordinary",
+            "squares": [
+              36,
+              29
+            ],
+            "board": "...QKB..RPPBPPPR.H...N.......p............nq.n.pppp..pp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 20,
+            "side": 0,
+            "move": 11,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 10,
+            "result": null,
+            "reason": "",
+            "action": [
+              36,
+              29,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 10,
+            "piece": "p",
+            "captured": "H"
+          },
+          {
+            "label": "11. Saxons: b3 \u2192 c4",
+            "phase": "ordinary",
+            "squares": [
+              17,
+              26
+            ],
+            "board": "...QKB..RPPBPPPR.....N....H..p............nq.n.pppp..pp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 21,
+            "side": 1,
+            "move": 11,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 11,
+            "result": null,
+            "reason": "",
+            "action": [
+              17,
+              26,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 11,
+            "piece": "H",
+            "captured": "."
+          },
+          {
+            "label": "11... Normans: f6 \u2192 g4",
+            "phase": "ordinary",
+            "squares": [
+              45,
+              30
+            ],
+            "board": "...QKB..RPPBPPPR.....N....H..pn...........nq...pppp..pp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 2,
+            "turn": 22,
+            "side": 0,
+            "move": 12,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 11,
+            "result": null,
+            "reason": "",
+            "action": [
+              45,
+              30,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 11,
+            "piece": "n",
+            "captured": "."
+          },
+          {
+            "label": "12. Saxons: d1 \u2192 c1",
+            "phase": "ordinary",
+            "squares": [
+              3,
+              2
+            ],
+            "board": "..Q.KB..RPPBPPPR.....N....H..pn...........nq...pppp..pp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 3,
+            "turn": 23,
+            "side": 1,
+            "move": 12,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 12,
+            "result": null,
+            "reason": "",
+            "action": [
+              3,
+              2,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 12,
+            "piece": "Q",
+            "captured": "."
+          },
+          {
+            "label": "12... Normans: g7 \u2192 g5 (double)",
+            "phase": "ordinary",
+            "squares": [
+              54,
+              38
+            ],
+            "board": "..Q.KB..RPPBPPPR.....N....H..pn.......p...nq...pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": 46,
+            "hm": 0,
+            "turn": 24,
+            "side": 0,
+            "move": 13,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 12,
+            "result": null,
+            "reason": "",
+            "action": [
+              54,
+              38,
+              "",
+              "double"
+            ],
+            "actor": 1,
+            "action_move": 12,
+            "piece": "p",
+            "captured": "."
+          },
+          {
+            "label": "13. Saxons: c1 \u2192 d1",
+            "phase": "ordinary",
+            "squares": [
+              2,
+              3
+            ],
+            "board": "...QKB..RPPBPPPR.....N....H..pn.......p...nq...pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 25,
+            "side": 1,
+            "move": 13,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 13,
+            "result": null,
+            "reason": "",
+            "action": [
+              2,
+              3,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 13,
+            "piece": "Q",
+            "captured": "."
+          },
+          {
+            "label": "13... Normans: c6 \u2192 e5",
+            "phase": "ordinary",
+            "squares": [
+              42,
+              36
+            ],
+            "board": "...QKB..RPPBPPPR.....N....H..pn.....n.p....q...pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 2,
+            "turn": 26,
+            "side": 0,
+            "move": 14,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 13,
+            "result": null,
+            "reason": "",
+            "action": [
+              42,
+              36,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 13,
+            "piece": "n",
+            "captured": "."
+          },
+          {
+            "label": "14. Saxons: d1 \u2192 c1",
+            "phase": "ordinary",
+            "squares": [
+              3,
+              2
+            ],
+            "board": "..Q.KB..RPPBPPPR.....N....H..pn.....n.p....q...pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 3,
+            "turn": 27,
+            "side": 1,
+            "move": 14,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 14,
+            "result": null,
+            "reason": "",
+            "action": [
+              3,
+              2,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 14,
+            "piece": "Q",
+            "captured": "."
+          },
+          {
+            "label": "14... Normans: d6 \u2192 b6",
+            "phase": "ordinary",
+            "squares": [
+              43,
+              41
+            ],
+            "board": "..Q.KB..RPPBPPPR.....N....H..pn.....n.p..q.....pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 4,
+            "turn": 28,
+            "side": 0,
+            "move": 15,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 14,
+            "result": null,
+            "reason": "",
+            "action": [
+              43,
+              41,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 14,
+            "piece": "q",
+            "captured": "."
+          },
+          {
+            "label": "15. Saxons: c1 \u2192 d1",
+            "phase": "ordinary",
+            "squares": [
+              2,
+              3
+            ],
+            "board": "...QKB..RPPBPPPR.....N....H..pn.....n.p..q.....pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 5,
+            "turn": 29,
+            "side": 1,
+            "move": 15,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 15,
+            "result": null,
+            "reason": "",
+            "action": [
+              2,
+              3,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 15,
+            "piece": "Q",
+            "captured": "."
+          },
+          {
+            "label": "15... Normans: b6 \u00d7 f2",
+            "phase": "ordinary",
+            "squares": [
+              41,
+              13
+            ],
+            "board": "...QKB..RPPBPqPR.....N....H..pn.....n.p........pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 30,
+            "side": 0,
+            "move": 16,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 15,
+            "result": null,
+            "reason": "",
+            "action": [
+              41,
+              13,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 15,
+            "piece": "q",
+            "captured": "P"
+          },
+          {
+            "label": "Game over: checkmate (black)",
+            "phase": "end",
+            "squares": [],
+            "board": "...QKB..RPPBPqPR.....N....H..pn.....n.p........pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 30,
+            "side": 0,
+            "move": 16,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 15,
+            "result": "black",
+            "reason": "checkmate"
+          }
+        ],
+        "winner": "black",
+        "reason": "checkmate"
+      }
+    },
+    {
+      "seed": 43,
+      "white": "light",
+      "black": "fairy",
+      "winner": "black",
+      "reason": "checkmate",
+      "victory_phase": "before charge",
+      "charge_move": null,
+      "knights_at_charge": null,
+      "housecarls_at_charge": null,
+      "knights_at_end": 2,
+      "housecarls_at_end": 1,
+      "housecarl_captures": 0,
+      "housecarls_captured": 1,
+      "charge_material_delta": null,
+      "charge_positional_delta": null,
+      "normal_response_delta": null,
+      "knight_bonus_delta": null,
+      "full_sequence_delta": null,
+      "thinking": [
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.009166088000029049,
+          "nodes": 20,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.0024238220000825095,
+          "score_cp": -600.8,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.009164994999991904,
+          "nodes": 23,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.0022425850002036896,
+          "score_cp": -552.8666666666667,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.02099342299993623,
+          "nodes": 26,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1106,
+          "seconds": 0.0023710129999017227,
+          "score_cp": -591.6,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.038467345999833924,
+          "nodes": 33,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1105,
+          "seconds": 0.0022659049998310365,
+          "score_cp": -535.7333333333333,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.045533747000035873,
+          "nodes": 36,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.0024771990001681843,
+          "score_cp": -369.3333333333333,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.12046125699998811,
+          "nodes": 37,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.002666975000011007,
+          "score_cp": -137.6,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.12028932600014741,
+          "nodes": 20,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.0024078710000594583,
+          "score_cp": -38.0,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.003318395999940549,
+          "nodes": 3,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1108,
+          "seconds": 0.0026791100001446466,
+          "score_cp": -68.46666666666667,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.1419654299998001,
+          "nodes": 28,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.0035497210001267376,
+          "score_cp": 200.0,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.12051556200003688,
+          "nodes": 29,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1105,
+          "seconds": 0.002816202999838424,
+          "score_cp": 323.0,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.0871366940000371,
+          "nodes": 36,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.002824029999828781,
+          "score_cp": 855.2666666666667,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.12030572300000131,
+          "nodes": 24,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.002827716999945551,
+          "score_cp": 671.0,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.12045884600001955,
+          "nodes": 23,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.0027378569998290914,
+          "score_cp": 703.3333333333334,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.12043055599997388,
+          "nodes": 15,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1115,
+          "seconds": 0.0025641479999194416,
+          "score_cp": 1169.0,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        },
+        {
+          "side": 0,
+          "mode": "light",
+          "seconds": 0.12054946900002506,
+          "nodes": 12,
+          "calls": 0
+        },
+        {
+          "side": 1,
+          "engine": "Fairy-Stockfish 14",
+          "mode": "Fairy-Stockfish hybrid",
+          "calls": 1,
+          "nodes": 1104,
+          "seconds": 0.002672598999879483,
+          "score_cp": 99899.0,
+          "detail": "Fairy-Stockfish MultiPV + Hastings planning (next charge 0%)"
+        }
+      ],
+      "replay": {
+        "format": "hastings-chess-3",
+        "ruleset": "hastings-3-king-housecarl-knight_pawn",
+        "bonus_mode": "knight_pawn",
+        "seed": 43,
+        "hazard": {
+          "20": 0.01,
+          "21": 0.03,
+          "22": 0.05,
+          "23": 0.07,
+          "24": 0.09,
+          "25": 0.1,
+          "26": 0.15,
+          "27": 0.25,
+          "28": 0.4,
+          "29": 0.6,
+          "30": 1.0
+        },
+        "events": [
+          {
+            "label": "The Saxons assemble. Nothing could possibly go wrong.",
+            "phase": "start",
+            "squares": [],
+            "board": "RNBQKBNRHPPPPPPH................................pppppppprnbqkbnr",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 0,
+            "side": 0,
+            "move": 1,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": null,
+            "result": null,
+            "reason": ""
+          },
+          {
+            "label": "1. Saxons: b1 \u2192 c3",
+            "phase": "ordinary",
+            "squares": [
+              1,
+              18
+            ],
+            "board": "R.BQKBNRHPPPPPPH..N.............................pppppppprnbqkbnr",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 1,
+            "side": 1,
+            "move": 1,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 1,
+            "result": null,
+            "reason": "",
+            "action": [
+              1,
+              18,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 1,
+            "piece": "N",
+            "captured": "."
+          },
+          {
+            "label": "1... Normans: g8 \u2192 f6",
+            "phase": "ordinary",
+            "squares": [
+              62,
+              45
+            ],
+            "board": "R.BQKBNRHPPPPPPH..N..........................n..pppppppprnbqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 2,
+            "turn": 2,
+            "side": 0,
+            "move": 2,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 1,
+            "result": null,
+            "reason": "",
+            "action": [
+              62,
+              45,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 1,
+            "piece": "n",
+            "captured": "."
+          },
+          {
+            "label": "2. Saxons: g1 \u2192 f3",
+            "phase": "ordinary",
+            "squares": [
+              6,
+              21
+            ],
+            "board": "R.BQKB.RHPPPPPPH..N..N.......................n..pppppppprnbqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 3,
+            "turn": 3,
+            "side": 1,
+            "move": 2,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 2,
+            "result": null,
+            "reason": "",
+            "action": [
+              6,
+              21,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 2,
+            "piece": "N",
+            "captured": "."
+          },
+          {
+            "label": "2... Normans: d7 \u2192 d5 (double)",
+            "phase": "ordinary",
+            "squares": [
+              51,
+              35
+            ],
+            "board": "R.BQKB.RHPPPPPPH..N..N.............p.........n..ppp.pppprnbqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": 43,
+            "hm": 0,
+            "turn": 4,
+            "side": 0,
+            "move": 3,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 2,
+            "result": null,
+            "reason": "",
+            "action": [
+              51,
+              35,
+              "",
+              "double"
+            ],
+            "actor": 1,
+            "action_move": 2,
+            "piece": "p",
+            "captured": "."
+          },
+          {
+            "label": "3. Saxons: h2 \u2192 g3",
+            "phase": "ordinary",
+            "squares": [
+              15,
+              22
+            ],
+            "board": "R.BQKB.RHPPPPPP...N..NH............p.........n..ppp.pppprnbqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 5,
+            "side": 1,
+            "move": 3,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 3,
+            "result": null,
+            "reason": "",
+            "action": [
+              15,
+              22,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 3,
+            "piece": "H",
+            "captured": "."
+          },
+          {
+            "label": "3... Normans: b8 \u2192 c6",
+            "phase": "ordinary",
+            "squares": [
+              57,
+              42
+            ],
+            "board": "R.BQKB.RHPPPPPP...N..NH............p......n..n..ppp.ppppr.bqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 2,
+            "turn": 6,
+            "side": 0,
+            "move": 4,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 3,
+            "result": null,
+            "reason": "",
+            "action": [
+              57,
+              42,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 3,
+            "piece": "n",
+            "captured": "."
+          },
+          {
+            "label": "4. Saxons: g3 \u2192 f4",
+            "phase": "ordinary",
+            "squares": [
+              22,
+              29
+            ],
+            "board": "R.BQKB.RHPPPPPP...N..N.......H.....p......n..n..ppp.ppppr.bqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 3,
+            "turn": 7,
+            "side": 1,
+            "move": 4,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 4,
+            "result": null,
+            "reason": "",
+            "action": [
+              22,
+              29,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 4,
+            "piece": "H",
+            "captured": "."
+          },
+          {
+            "label": "4... Normans: h7 \u2192 h6",
+            "phase": "ordinary",
+            "squares": [
+              55,
+              47
+            ],
+            "board": "R.BQKB.RHPPPPPP...N..N.......H.....p......n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 8,
+            "side": 0,
+            "move": 5,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 4,
+            "result": null,
+            "reason": "",
+            "action": [
+              55,
+              47,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 4,
+            "piece": "p",
+            "captured": "."
+          },
+          {
+            "label": "5. Saxons: a2 \u2192 b3",
+            "phase": "ordinary",
+            "squares": [
+              8,
+              17
+            ],
+            "board": "R.BQKB.R.PPPPPP..HN..N.......H.....p......n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 9,
+            "side": 1,
+            "move": 5,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 5,
+            "result": null,
+            "reason": "",
+            "action": [
+              8,
+              17,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 5,
+            "piece": "H",
+            "captured": "."
+          },
+          {
+            "label": "5... Normans: d5 \u2192 d4",
+            "phase": "ordinary",
+            "squares": [
+              35,
+              27
+            ],
+            "board": "R.BQKB.R.PPPPPP..HN..N.....p.H............n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": true,
+              "Q": true,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 10,
+            "side": 0,
+            "move": 6,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 5,
+            "result": null,
+            "reason": "",
+            "action": [
+              35,
+              27,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 5,
+            "piece": "p",
+            "captured": "."
+          },
+          {
+            "label": "6. Saxons: a1 \u2192 a2",
+            "phase": "ordinary",
+            "squares": [
+              0,
+              8
+            ],
+            "board": "..BQKB.RRPPPPPP..HN..N.....p.H............n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": true,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 11,
+            "side": 1,
+            "move": 6,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 6,
+            "result": null,
+            "reason": "",
+            "action": [
+              0,
+              8,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 6,
+            "piece": "R",
+            "captured": "."
+          },
+          {
+            "label": "6... Normans: d4 \u00d7 c3",
+            "phase": "ordinary",
+            "squares": [
+              27,
+              18
+            ],
+            "board": "..BQKB.RRPPPPPP..Hp..N.......H............n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": true,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 12,
+            "side": 0,
+            "move": 7,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 6,
+            "result": null,
+            "reason": "",
+            "action": [
+              27,
+              18,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 6,
+            "piece": "p",
+            "captured": "N"
+          },
+          {
+            "label": "7. Saxons: h1 \u2192 h2",
+            "phase": "ordinary",
+            "squares": [
+              7,
+              15
+            ],
+            "board": "..BQKB..RPPPPPPR.Hp..N.......H............n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 13,
+            "side": 1,
+            "move": 7,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 7,
+            "result": null,
+            "reason": "",
+            "action": [
+              7,
+              15,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 7,
+            "piece": "R",
+            "captured": "."
+          },
+          {
+            "label": "7... Normans: c3 \u00d7 d2",
+            "phase": "ordinary",
+            "squares": [
+              18,
+              11
+            ],
+            "board": "..BQKB..RPPpPPPR.H...N.......H............n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 14,
+            "side": 0,
+            "move": 8,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 7,
+            "result": null,
+            "reason": "",
+            "action": [
+              18,
+              11,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 7,
+            "piece": "p",
+            "captured": "P"
+          },
+          {
+            "label": "8. Saxons: c1 \u00d7 d2",
+            "phase": "ordinary",
+            "squares": [
+              2,
+              11
+            ],
+            "board": "...QKB..RPPBPPPR.H...N.......H............n..n.pppp.ppp.r.bqkb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 15,
+            "side": 1,
+            "move": 8,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 8,
+            "result": null,
+            "reason": "",
+            "action": [
+              2,
+              11,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 8,
+            "piece": "B",
+            "captured": "p"
+          },
+          {
+            "label": "8... Normans: d8 \u2192 d6",
+            "phase": "ordinary",
+            "squares": [
+              59,
+              43
+            ],
+            "board": "...QKB..RPPBPPPR.H...N.......H............nq.n.pppp.ppp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 16,
+            "side": 0,
+            "move": 9,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 8,
+            "result": null,
+            "reason": "",
+            "action": [
+              59,
+              43,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 8,
+            "piece": "q",
+            "captured": "."
+          },
+          {
+            "label": "9. Saxons: d1 \u2192 c1",
+            "phase": "ordinary",
+            "squares": [
+              3,
+              2
+            ],
+            "board": "..Q.KB..RPPBPPPR.H...N.......H............nq.n.pppp.ppp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 2,
+            "turn": 17,
+            "side": 1,
+            "move": 9,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 9,
+            "result": null,
+            "reason": "",
+            "action": [
+              3,
+              2,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 9,
+            "piece": "Q",
+            "captured": "."
+          },
+          {
+            "label": "9... Normans: e7 \u2192 e5 (double)",
+            "phase": "ordinary",
+            "squares": [
+              52,
+              36
+            ],
+            "board": "..Q.KB..RPPBPPPR.H...N.......H......p.....nq.n.pppp..pp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": 44,
+            "hm": 0,
+            "turn": 18,
+            "side": 0,
+            "move": 10,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 9,
+            "result": null,
+            "reason": "",
+            "action": [
+              52,
+              36,
+              "",
+              "double"
+            ],
+            "actor": 1,
+            "action_move": 9,
+            "piece": "p",
+            "captured": "."
+          },
+          {
+            "label": "10. Saxons: c1 \u2192 d1",
+            "phase": "ordinary",
+            "squares": [
+              2,
+              3
+            ],
+            "board": "...QKB..RPPBPPPR.H...N.......H......p.....nq.n.pppp..pp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 19,
+            "side": 1,
+            "move": 10,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 10,
+            "result": null,
+            "reason": "",
+            "action": [
+              2,
+              3,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 10,
+            "piece": "Q",
+            "captured": "."
+          },
+          {
+            "label": "10... Normans: e5 \u00d7 f4",
+            "phase": "ordinary",
+            "squares": [
+              36,
+              29
+            ],
+            "board": "...QKB..RPPBPPPR.H...N.......p............nq.n.pppp..pp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 20,
+            "side": 0,
+            "move": 11,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 10,
+            "result": null,
+            "reason": "",
+            "action": [
+              36,
+              29,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 10,
+            "piece": "p",
+            "captured": "H"
+          },
+          {
+            "label": "11. Saxons: b3 \u2192 c4",
+            "phase": "ordinary",
+            "squares": [
+              17,
+              26
+            ],
+            "board": "...QKB..RPPBPPPR.....N....H..p............nq.n.pppp..pp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 21,
+            "side": 1,
+            "move": 11,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 11,
+            "result": null,
+            "reason": "",
+            "action": [
+              17,
+              26,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 11,
+            "piece": "H",
+            "captured": "."
+          },
+          {
+            "label": "11... Normans: f6 \u2192 g4",
+            "phase": "ordinary",
+            "squares": [
+              45,
+              30
+            ],
+            "board": "...QKB..RPPBPPPR.....N....H..pn...........nq...pppp..pp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 2,
+            "turn": 22,
+            "side": 0,
+            "move": 12,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 11,
+            "result": null,
+            "reason": "",
+            "action": [
+              45,
+              30,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 11,
+            "piece": "n",
+            "captured": "."
+          },
+          {
+            "label": "12. Saxons: d1 \u2192 c1",
+            "phase": "ordinary",
+            "squares": [
+              3,
+              2
+            ],
+            "board": "..Q.KB..RPPBPPPR.....N....H..pn...........nq...pppp..pp.r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 3,
+            "turn": 23,
+            "side": 1,
+            "move": 12,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 12,
+            "result": null,
+            "reason": "",
+            "action": [
+              3,
+              2,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 12,
+            "piece": "Q",
+            "captured": "."
+          },
+          {
+            "label": "12... Normans: g7 \u2192 g5 (double)",
+            "phase": "ordinary",
+            "squares": [
+              54,
+              38
+            ],
+            "board": "..Q.KB..RPPBPPPR.....N....H..pn.......p...nq...pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": 46,
+            "hm": 0,
+            "turn": 24,
+            "side": 0,
+            "move": 13,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 12,
+            "result": null,
+            "reason": "",
+            "action": [
+              54,
+              38,
+              "",
+              "double"
+            ],
+            "actor": 1,
+            "action_move": 12,
+            "piece": "p",
+            "captured": "."
+          },
+          {
+            "label": "13. Saxons: c1 \u2192 d1",
+            "phase": "ordinary",
+            "squares": [
+              2,
+              3
+            ],
+            "board": "...QKB..RPPBPPPR.....N....H..pn.......p...nq...pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 1,
+            "turn": 25,
+            "side": 1,
+            "move": 13,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 13,
+            "result": null,
+            "reason": "",
+            "action": [
+              2,
+              3,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 13,
+            "piece": "Q",
+            "captured": "."
+          },
+          {
+            "label": "13... Normans: c6 \u2192 e5",
+            "phase": "ordinary",
+            "squares": [
+              42,
+              36
+            ],
+            "board": "...QKB..RPPBPPPR.....N....H..pn.....n.p....q...pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 2,
+            "turn": 26,
+            "side": 0,
+            "move": 14,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 13,
+            "result": null,
+            "reason": "",
+            "action": [
+              42,
+              36,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 13,
+            "piece": "n",
+            "captured": "."
+          },
+          {
+            "label": "14. Saxons: d1 \u2192 c1",
+            "phase": "ordinary",
+            "squares": [
+              3,
+              2
+            ],
+            "board": "..Q.KB..RPPBPPPR.....N....H..pn.....n.p....q...pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 3,
+            "turn": 27,
+            "side": 1,
+            "move": 14,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 14,
+            "result": null,
+            "reason": "",
+            "action": [
+              3,
+              2,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 14,
+            "piece": "Q",
+            "captured": "."
+          },
+          {
+            "label": "14... Normans: d6 \u2192 b6",
+            "phase": "ordinary",
+            "squares": [
+              43,
+              41
+            ],
+            "board": "..Q.KB..RPPBPPPR.....N....H..pn.....n.p..q.....pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 4,
+            "turn": 28,
+            "side": 0,
+            "move": 15,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 14,
+            "result": null,
+            "reason": "",
+            "action": [
+              43,
+              41,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 14,
+            "piece": "q",
+            "captured": "."
+          },
+          {
+            "label": "15. Saxons: c1 \u2192 d1",
+            "phase": "ordinary",
+            "squares": [
+              2,
+              3
+            ],
+            "board": "...QKB..RPPBPPPR.....N....H..pn.....n.p..q.....pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 5,
+            "turn": 29,
+            "side": 1,
+            "move": 15,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 15,
+            "result": null,
+            "reason": "",
+            "action": [
+              2,
+              3,
+              "",
+              ""
+            ],
+            "actor": 0,
+            "action_move": 15,
+            "piece": "Q",
+            "captured": "."
+          },
+          {
+            "label": "15... Normans: b6 \u00d7 f2",
+            "phase": "ordinary",
+            "squares": [
+              41,
+              13
+            ],
+            "board": "...QKB..RPPBPqPR.....N....H..pn.....n.p........pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 30,
+            "side": 0,
+            "move": 16,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 15,
+            "result": null,
+            "reason": "",
+            "action": [
+              41,
+              13,
+              "",
+              ""
+            ],
+            "actor": 1,
+            "action_move": 15,
+            "piece": "q",
+            "captured": "P"
+          },
+          {
+            "label": "Game over: checkmate (black)",
+            "phase": "end",
+            "squares": [],
+            "board": "...QKB..RPPBPqPR.....N....H..pn.....n.p........pppp..p..r.b.kb.r",
+            "castle": {
+              "K": false,
+              "Q": false,
+              "k": true,
+              "q": true
+            },
+            "ep": -1,
+            "hm": 0,
+            "turn": 30,
+            "side": 0,
+            "move": 16,
+            "bonus": 0,
+            "normal_pending": false,
+            "bonus_mode": "knight_pawn",
+            "charged": false,
+            "next_phase": "ordinary",
+            "attempted_move": 15,
+            "result": "black",
+            "reason": "checkmate"
+          }
+        ],
+        "winner": "black",
+        "reason": "checkmate"
+      }
+    }
+  ]
+}

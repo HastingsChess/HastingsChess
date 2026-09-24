@@ -1,0 +1,16 @@
+test_batch_game_selector (test_gui.GuiTests.test_batch_game_selector) ... ok
+test_engine_failure_stays_visible (test_gui.GuiTests.test_engine_failure_stays_visible) ... ok
+test_human_move_flip_undo (test_gui.GuiTests.test_human_move_flip_undo) ... ok
+test_narrow_and_desktop_board_bounds (test_gui.GuiTests.test_narrow_and_desktop_board_bounds) ... ok
+test_no_live_moves_from_old_position (test_gui.GuiTests.test_no_live_moves_from_old_position) ... ok
+test_promotion_choice (test_gui.GuiTests.test_promotion_choice) ... ok
+test_real_engine_computer_turn (test_gui.GuiTests.test_real_engine_computer_turn) ... ok
+test_replay_open_navigation_and_live (test_gui.GuiTests.test_replay_open_navigation_and_live) ... ok
+test_restart_discards_stale_engine_move (test_gui.GuiTests.test_restart_discards_stale_engine_move) ... ok
+test_save_is_importable (test_gui.GuiTests.test_save_is_importable) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 2.370s
+
+OK
+Desktop and 640px screenshots captured

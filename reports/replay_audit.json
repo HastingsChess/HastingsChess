@@ -1,0 +1,2016 @@
+[
+  {
+    "replay": 1,
+    "checks": [
+      {
+        "index": 1,
+        "label": "1. Saxons: a2 \u2192 c4",
+        "old_legal": true,
+        "moves": [
+          [
+            8,
+            26,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 2,
+        "label": "1... Normans: e7 \u2192 e5 (double)",
+        "old_legal": true,
+        "moves": [
+          [
+            52,
+            36,
+            "",
+            "double"
+          ]
+        ]
+      },
+      {
+        "index": 3,
+        "label": "2. Saxons: g1 \u2192 f3",
+        "old_legal": true,
+        "moves": [
+          [
+            6,
+            21,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 4,
+        "label": "2... Normans: d7 \u2192 d6",
+        "old_legal": true,
+        "moves": [
+          [
+            51,
+            43,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 5,
+        "label": "3. Saxons: b1 \u2192 c3",
+        "old_legal": true,
+        "moves": [
+          [
+            1,
+            18,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 6,
+        "label": "3... Normans: c8 \u2192 e6",
+        "old_legal": true,
+        "moves": [
+          [
+            58,
+            44,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 7,
+        "label": "4. Saxons: c4 \u2192 e4",
+        "old_legal": true,
+        "moves": [
+          [
+            26,
+            28,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 8,
+        "label": "4... Normans: f7 \u2192 f5 (double)",
+        "old_legal": true,
+        "moves": [
+          [
+            53,
+            37,
+            "",
+            "double"
+          ]
+        ]
+      },
+      {
+        "index": 9,
+        "label": "5. Saxons: e4 \u2192 d3",
+        "old_legal": true,
+        "moves": [
+          [
+            28,
+            19,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 10,
+        "label": "5... Normans: g8 \u2192 f6",
+        "old_legal": true,
+        "moves": [
+          [
+            62,
+            45,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 11,
+        "label": "6. Saxons: h2 \u2192 h4",
+        "old_legal": true,
+        "moves": [
+          [
+            15,
+            31,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 12,
+        "label": "6... Normans: b8 \u2192 d7",
+        "old_legal": true,
+        "moves": [
+          [
+            57,
+            51,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 13,
+        "label": "7. Saxons: b2 \u2192 b4 (double)",
+        "old_legal": true,
+        "moves": [
+          [
+            9,
+            25,
+            "",
+            "double"
+          ]
+        ]
+      },
+      {
+        "index": 14,
+        "label": "7... Normans: d8 \u2192 e7",
+        "old_legal": true,
+        "moves": [
+          [
+            59,
+            52,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 15,
+        "label": "8. Saxons: b4 \u2192 b5",
+        "old_legal": true,
+        "moves": [
+          [
+            25,
+            33,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 16,
+        "label": "8... Normans: e8 \u2192 c8 (castle)",
+        "old_legal": true,
+        "moves": [
+          [
+            60,
+            58,
+            "",
+            "castle"
+          ]
+        ]
+      },
+      {
+        "index": 17,
+        "label": "9. Saxons: a1 \u00d7 a7",
+        "old_legal": true,
+        "moves": [
+          [
+            0,
+            48,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 18,
+        "label": "9... Normans: d7 \u2192 b8",
+        "old_legal": true,
+        "moves": [
+          [
+            51,
+            57,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 19,
+        "label": "10. Saxons: a7 \u2192 a8",
+        "old_legal": true,
+        "moves": [
+          [
+            48,
+            56,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 20,
+        "label": "10... Normans: c8 \u2192 d7",
+        "old_legal": true,
+        "moves": [
+          [
+            58,
+            51,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 21,
+        "label": "11. Saxons: h4 \u2192 g5",
+        "old_legal": true,
+        "moves": [
+          [
+            31,
+            38,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 22,
+        "label": "11... Normans: h7 \u2192 h6",
+        "old_legal": true,
+        "moves": [
+          [
+            55,
+            47,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 23,
+        "label": "12. Saxons: g5 \u2192 e3",
+        "old_legal": true,
+        "moves": [
+          [
+            38,
+            20,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 24,
+        "label": "12... Normans: c7 \u2192 c6",
+        "old_legal": true,
+        "moves": [
+          [
+            50,
+            42,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 25,
+        "label": "13. Saxons: b5 \u2192 b6",
+        "old_legal": true,
+        "moves": [
+          [
+            33,
+            41,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 26,
+        "label": "13... Normans: b8 \u2192 a6",
+        "old_legal": true,
+        "moves": [
+          [
+            57,
+            40,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 27,
+        "label": "14. Saxons: a8 \u00d7 d8",
+        "old_legal": true,
+        "moves": [
+          [
+            56,
+            59,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 28,
+        "label": "14... Normans: e7 \u00d7 d8",
+        "old_legal": true,
+        "moves": [
+          [
+            52,
+            59,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 29,
+        "label": "15. Saxons: g2 \u2192 g4 (double)",
+        "old_legal": true,
+        "moves": [
+          [
+            14,
+            30,
+            "",
+            "double"
+          ]
+        ]
+      },
+      {
+        "index": 30,
+        "label": "15... Normans: g7 \u2192 g6",
+        "old_legal": true,
+        "moves": [
+          [
+            54,
+            46,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 31,
+        "label": "16. Saxons: g4 \u00d7 f5",
+        "old_legal": true,
+        "moves": [
+          [
+            30,
+            37,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 32,
+        "label": "16... Normans: g6 \u00d7 f5",
+        "old_legal": true,
+        "moves": [
+          [
+            46,
+            37,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 33,
+        "label": "17. Saxons: c1 \u2192 b2",
+        "old_legal": true,
+        "moves": [
+          [
+            2,
+            9,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 34,
+        "label": "17... Normans: h8 \u2192 g8",
+        "old_legal": true,
+        "moves": [
+          [
+            63,
+            62,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 35,
+        "label": "18. Saxons: d1 \u2192 a1",
+        "old_legal": true,
+        "moves": [
+          [
+            3,
+            0,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 36,
+        "label": "18... Normans: d6 \u2192 d5",
+        "old_legal": true,
+        "moves": [
+          [
+            43,
+            35,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 37,
+        "label": "19. Saxons: f3 \u00d7 e5",
+        "old_legal": true,
+        "moves": [
+          [
+            21,
+            36,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 38,
+        "label": "19... Normans: d7 \u2192 e8",
+        "old_legal": true,
+        "moves": [
+          [
+            51,
+            60,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 39,
+        "label": "20. Saxons: a1 \u00d7 a6",
+        "old_legal": true,
+        "moves": [
+          [
+            0,
+            40,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 40,
+        "label": "20... Normans: b7 \u00d7 a6",
+        "old_legal": true,
+        "moves": [
+          [
+            49,
+            40,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 41,
+        "label": "21. Saxons: b6 \u2192 b7",
+        "old_legal": true,
+        "moves": [
+          [
+            41,
+            49,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 42,
+        "label": "21... Normans: f8 \u2192 d6",
+        "old_legal": true,
+        "moves": [
+          [
+            61,
+            43,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 43,
+        "label": "22. Saxons: e5 \u00d7 c6",
+        "old_legal": true,
+        "moves": [
+          [
+            36,
+            42,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 44,
+        "label": "22... Normans: d8 \u2192 c7",
+        "old_legal": true,
+        "moves": [
+          [
+            59,
+            50,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 45,
+        "label": "23. Saxons: b7 \u2192 b8=Q",
+        "old_legal": true,
+        "moves": [
+          [
+            49,
+            57,
+            "q",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 46,
+        "label": "23... Normans: c7 \u00d7 b8",
+        "old_legal": true,
+        "moves": [
+          [
+            50,
+            57,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 54,
+        "label": "24... Normans: b8 \u00d7 b2",
+        "old_legal": true,
+        "moves": [
+          [
+            57,
+            9,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 55,
+        "label": "BONUS KNIGHT: 24... Normans: f6 \u00d7 d5",
+        "old_legal": true,
+        "moves": [
+          [
+            45,
+            35,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 56,
+        "label": "BONUS KNIGHT: 24... Normans: d5 \u00d7 c3",
+        "old_legal": true,
+        "moves": [
+          [
+            35,
+            18,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 57,
+        "label": "25. Saxons: c4 \u00d7 b2",
+        "old_legal": true,
+        "moves": [
+          [
+            26,
+            9,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 58,
+        "label": "25... Normans: d6 \u00d7 e5",
+        "old_legal": true,
+        "moves": [
+          [
+            43,
+            36,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 59,
+        "label": "26. Saxons: c6 \u00d7 e5",
+        "old_legal": true,
+        "moves": [
+          [
+            42,
+            36,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 60,
+        "label": "26... Normans: c3 \u00d7 e4",
+        "old_legal": true,
+        "moves": [
+          [
+            18,
+            28,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 61,
+        "label": "27. Saxons: f5 \u00d7 e6",
+        "old_legal": true,
+        "moves": [
+          [
+            37,
+            44,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 62,
+        "label": "27... Normans: a6 \u2192 a5",
+        "old_legal": true,
+        "moves": [
+          [
+            40,
+            32,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 63,
+        "label": "28. Saxons: h1 \u00d7 h6",
+        "old_legal": true,
+        "moves": [
+          [
+            7,
+            47,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 64,
+        "label": "28... Normans: g8 \u2192 g1",
+        "old_legal": true,
+        "moves": [
+          [
+            62,
+            6,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 65,
+        "label": "29. Saxons: h6 \u2192 h8",
+        "old_legal": true,
+        "moves": [
+          [
+            47,
+            63,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 66,
+        "label": "29... Normans: e8 \u2192 e7",
+        "old_legal": true,
+        "moves": [
+          [
+            60,
+            52,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 67,
+        "label": "30. Saxons: h8 \u2192 h4",
+        "old_legal": true,
+        "moves": [
+          [
+            63,
+            31,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 68,
+        "label": "30... Normans: e4 \u2192 g3",
+        "old_legal": true,
+        "moves": [
+          [
+            28,
+            22,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 69,
+        "label": "31. Saxons: e1 \u2192 f2",
+        "old_legal": true,
+        "moves": [
+          [
+            4,
+            13,
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "failures": []
+  },
+  {
+    "replay": 2,
+    "checks": [
+      {
+        "index": 1,
+        "label": "1. Saxons: h2 \u2192 f4",
+        "old_legal": true,
+        "moves": [
+          [
+            15,
+            29,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 2,
+        "label": "1... Normans: b8 \u2192 c6",
+        "old_legal": true,
+        "moves": [
+          [
+            57,
+            42,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 3,
+        "label": "2. Saxons: d2 \u2192 d4 (double)",
+        "old_legal": true,
+        "moves": [
+          [
+            11,
+            27,
+            "",
+            "double"
+          ]
+        ]
+      },
+      {
+        "index": 4,
+        "label": "2... Normans: g8 \u2192 f6",
+        "old_legal": true,
+        "moves": [
+          [
+            62,
+            45,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 5,
+        "label": "3. Saxons: a2 \u2192 c4",
+        "old_legal": true,
+        "moves": [
+          [
+            8,
+            26,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 6,
+        "label": "3... Normans: g7 \u2192 g5 (double)",
+        "old_legal": true,
+        "moves": [
+          [
+            54,
+            38,
+            "",
+            "double"
+          ]
+        ]
+      },
+      {
+        "index": 7,
+        "label": "4. Saxons: f4 \u00d7 g5",
+        "old_legal": true,
+        "moves": [
+          [
+            29,
+            38,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 8,
+        "label": "4... Normans: f6 \u2192 e4",
+        "old_legal": true,
+        "moves": [
+          [
+            45,
+            28,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 9,
+        "label": "5. Saxons: g5 \u2192 e3",
+        "old_legal": true,
+        "moves": [
+          [
+            38,
+            20,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 10,
+        "label": "5... Normans: e4 \u2192 d6",
+        "old_legal": true,
+        "moves": [
+          [
+            28,
+            43,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 11,
+        "label": "6. Saxons: b2 \u2192 b3",
+        "old_legal": true,
+        "moves": [
+          [
+            9,
+            17,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 12,
+        "label": "6... Normans: d6 \u00d7 c4",
+        "old_legal": true,
+        "moves": [
+          [
+            43,
+            26,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 13,
+        "label": "7. Saxons: b3 \u00d7 c4",
+        "old_legal": true,
+        "moves": [
+          [
+            17,
+            26,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 14,
+        "label": "7... Normans: f7 \u2192 f5 (double)",
+        "old_legal": true,
+        "moves": [
+          [
+            53,
+            37,
+            "",
+            "double"
+          ]
+        ]
+      },
+      {
+        "index": 15,
+        "label": "8. Saxons: d4 \u2192 d5",
+        "old_legal": true,
+        "moves": [
+          [
+            27,
+            35,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 16,
+        "label": "8... Normans: c6 \u2192 e5",
+        "old_legal": true,
+        "moves": [
+          [
+            42,
+            36,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 17,
+        "label": "9. Saxons: g1 \u2192 f3",
+        "old_legal": true,
+        "moves": [
+          [
+            6,
+            21,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 18,
+        "label": "9... Normans: e5 \u00d7 c4",
+        "old_legal": true,
+        "moves": [
+          [
+            36,
+            26,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 19,
+        "label": "10. Saxons: d1 \u2192 d3",
+        "old_legal": true,
+        "moves": [
+          [
+            3,
+            19,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 20,
+        "label": "10... Normans: c4 \u00d7 e3",
+        "old_legal": true,
+        "moves": [
+          [
+            26,
+            20,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 21,
+        "label": "11. Saxons: d3 \u00d7 e3",
+        "old_legal": true,
+        "moves": [
+          [
+            19,
+            20,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 22,
+        "label": "11... Normans: b7 \u2192 b5 (double)",
+        "old_legal": true,
+        "moves": [
+          [
+            49,
+            33,
+            "",
+            "double"
+          ]
+        ]
+      },
+      {
+        "index": 23,
+        "label": "12. Saxons: e3 \u2192 f4",
+        "old_legal": true,
+        "moves": [
+          [
+            20,
+            29,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 24,
+        "label": "12... Normans: a7 \u2192 a5 (double)",
+        "old_legal": true,
+        "moves": [
+          [
+            48,
+            32,
+            "",
+            "double"
+          ]
+        ]
+      },
+      {
+        "index": 25,
+        "label": "13. Saxons: e2 \u2192 e3",
+        "old_legal": true,
+        "moves": [
+          [
+            12,
+            20,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 26,
+        "label": "13... Normans: a5 \u2192 a4",
+        "old_legal": true,
+        "moves": [
+          [
+            32,
+            24,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 27,
+        "label": "14. Saxons: f1 \u00d7 b5",
+        "old_legal": true,
+        "moves": [
+          [
+            5,
+            33,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 28,
+        "label": "14... Normans: c7 \u2192 c5 (double)",
+        "old_legal": true,
+        "moves": [
+          [
+            50,
+            34,
+            "",
+            "double"
+          ]
+        ]
+      },
+      {
+        "index": 29,
+        "label": "15. Saxons: d5 \u2192 c6 (ep)",
+        "old_legal": true,
+        "moves": [
+          [
+            35,
+            42,
+            "",
+            "ep"
+          ]
+        ]
+      },
+      {
+        "index": 30,
+        "label": "15... Normans: d7 \u00d7 c6",
+        "old_legal": true,
+        "moves": [
+          [
+            51,
+            42,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 31,
+        "label": "16. Saxons: b5 \u00d7 c6",
+        "old_legal": true,
+        "moves": [
+          [
+            33,
+            42,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 32,
+        "label": "16... Normans: c8 \u2192 d7",
+        "old_legal": true,
+        "moves": [
+          [
+            58,
+            51,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 33,
+        "label": "17. Saxons: c6 \u00d7 a8",
+        "old_legal": true,
+        "moves": [
+          [
+            42,
+            56,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 34,
+        "label": "17... Normans: d8 \u00d7 a8",
+        "old_legal": true,
+        "moves": [
+          [
+            59,
+            56,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 35,
+        "label": "18. Saxons: a1 \u00d7 a4",
+        "old_legal": true,
+        "moves": [
+          [
+            0,
+            24,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 36,
+        "label": "18... Normans: d7 \u00d7 a4",
+        "old_legal": true,
+        "moves": [
+          [
+            51,
+            24,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 37,
+        "label": "19. Saxons: e1 \u2192 f1",
+        "old_legal": true,
+        "moves": [
+          [
+            4,
+            5,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 38,
+        "label": "19... Normans: a4 \u2192 b5",
+        "old_legal": true,
+        "moves": [
+          [
+            24,
+            33,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 39,
+        "label": "20. Saxons: f1 \u2192 g1",
+        "old_legal": true,
+        "moves": [
+          [
+            5,
+            6,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 40,
+        "label": "20... Normans: a8 \u2192 d5",
+        "old_legal": true,
+        "moves": [
+          [
+            56,
+            35,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 41,
+        "label": "21. Saxons: b1 \u2192 c3",
+        "old_legal": true,
+        "moves": [
+          [
+            1,
+            18,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 42,
+        "label": "21... Normans: d5 \u2192 c5",
+        "old_legal": true,
+        "moves": [
+          [
+            35,
+            34,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 43,
+        "label": "22. Saxons: c3 \u00d7 b5",
+        "old_legal": true,
+        "moves": [
+          [
+            18,
+            33,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 44,
+        "label": "22... Normans: c5 \u00d7 b5",
+        "old_legal": true,
+        "moves": [
+          [
+            34,
+            33,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 45,
+        "label": "23. Saxons: f3 \u2192 g5",
+        "old_legal": true,
+        "moves": [
+          [
+            21,
+            38,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 46,
+        "label": "23... Normans: h7 \u2192 h5 (double)",
+        "old_legal": true,
+        "moves": [
+          [
+            55,
+            39,
+            "",
+            "double"
+          ]
+        ]
+      },
+      {
+        "index": 47,
+        "label": "24. Saxons: c2 \u2192 c4 (double)",
+        "old_legal": true,
+        "moves": [
+          [
+            10,
+            26,
+            "",
+            "double"
+          ]
+        ]
+      },
+      {
+        "index": 48,
+        "label": "24... Normans: b5 \u2192 c5",
+        "old_legal": true,
+        "moves": [
+          [
+            33,
+            34,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 49,
+        "label": "25. Saxons: c1 \u2192 b2",
+        "old_legal": true,
+        "moves": [
+          [
+            2,
+            9,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 50,
+        "label": "25... Normans: h8 \u2192 h6",
+        "old_legal": true,
+        "moves": [
+          [
+            63,
+            47,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 56,
+        "label": "26... Normans: h6 \u00d7 g6",
+        "old_legal": true,
+        "moves": [
+          [
+            47,
+            46,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 59,
+        "label": "27. Saxons: f4 \u00d7 f5",
+        "old_legal": true,
+        "moves": [
+          [
+            29,
+            37,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 60,
+        "label": "27... Normans: g6 \u00d7 e6",
+        "old_legal": true,
+        "moves": [
+          [
+            46,
+            44,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 61,
+        "label": "28. Saxons: h1 \u00d7 h5",
+        "old_legal": true,
+        "moves": [
+          [
+            7,
+            39,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 62,
+        "label": "28... Normans: e6 \u2192 e1",
+        "old_legal": true,
+        "moves": [
+          [
+            44,
+            4,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 63,
+        "label": "29. Saxons: g1 \u2192 g2",
+        "old_legal": true,
+        "moves": [
+          [
+            6,
+            14,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 64,
+        "label": "29... Normans: e1 \u2192 e2",
+        "old_legal": true,
+        "moves": [
+          [
+            4,
+            12,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 65,
+        "label": "30. Saxons: g2 \u2192 g3",
+        "old_legal": true,
+        "moves": [
+          [
+            14,
+            22,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 66,
+        "label": "30... Normans: e2 \u00d7 b2",
+        "old_legal": true,
+        "moves": [
+          [
+            12,
+            9,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 67,
+        "label": "31. Saxons: h5 \u2192 h8",
+        "old_legal": true,
+        "moves": [
+          [
+            39,
+            63,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 68,
+        "label": "31... Normans: c6 \u2192 c7",
+        "old_legal": true,
+        "moves": [
+          [
+            42,
+            50,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 69,
+        "label": "32. Saxons: f3 \u2192 f4",
+        "old_legal": true,
+        "moves": [
+          [
+            21,
+            29,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 70,
+        "label": "32... Normans: b2 \u2192 b3",
+        "old_legal": true,
+        "moves": [
+          [
+            9,
+            17,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 71,
+        "label": "33. Saxons: g3 \u2192 h4",
+        "old_legal": true,
+        "moves": [
+          [
+            22,
+            31,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 72,
+        "label": "33... Normans: e7 \u2192 e5 (double)",
+        "old_legal": true,
+        "moves": [
+          [
+            52,
+            36,
+            "",
+            "double"
+          ]
+        ]
+      },
+      {
+        "index": 73,
+        "label": "34. Saxons: f5 \u00d7 f8",
+        "old_legal": true,
+        "moves": [
+          [
+            37,
+            61,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 74,
+        "label": "34... Normans: e8 \u2192 d7",
+        "old_legal": true,
+        "moves": [
+          [
+            60,
+            51,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 75,
+        "label": "35. Saxons: h8 \u2192 h7",
+        "old_legal": true,
+        "moves": [
+          [
+            63,
+            55,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 76,
+        "label": "35... Normans: d7 \u2192 c6",
+        "old_legal": true,
+        "moves": [
+          [
+            51,
+            42,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 77,
+        "label": "36. Saxons: h7 \u00d7 c7",
+        "old_legal": true,
+        "moves": [
+          [
+            55,
+            50,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 78,
+        "label": "36... Normans: c6 \u00d7 c7",
+        "old_legal": true,
+        "moves": [
+          [
+            42,
+            50,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 79,
+        "label": "37. Saxons: g5 \u2192 g6",
+        "old_legal": true,
+        "moves": [
+          [
+            38,
+            46,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 80,
+        "label": "37... Normans: e5 \u2192 e4",
+        "old_legal": true,
+        "moves": [
+          [
+            36,
+            28,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 81,
+        "label": "38. Saxons: f8 \u2192 e7",
+        "old_legal": true,
+        "moves": [
+          [
+            61,
+            52,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 82,
+        "label": "38... Normans: c7 \u2192 b8",
+        "old_legal": true,
+        "moves": [
+          [
+            50,
+            57,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 83,
+        "label": "39. Saxons: e7 \u00d7 e4",
+        "old_legal": true,
+        "moves": [
+          [
+            52,
+            28,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 84,
+        "label": "39... Normans: b3 \u2192 c3",
+        "old_legal": true,
+        "moves": [
+          [
+            17,
+            18,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 85,
+        "label": "40. Saxons: g6 \u2192 g7",
+        "old_legal": true,
+        "moves": [
+          [
+            46,
+            54,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 86,
+        "label": "40... Normans: c3 \u2192 g3",
+        "old_legal": true,
+        "moves": [
+          [
+            18,
+            22,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 87,
+        "label": "41. Saxons: h4 \u00d7 g3",
+        "old_legal": true,
+        "moves": [
+          [
+            31,
+            22,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 88,
+        "label": "41... Normans: b8 \u2192 a7",
+        "old_legal": true,
+        "moves": [
+          [
+            57,
+            48,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 89,
+        "label": "42. Saxons: g7 \u2192 g8=Q",
+        "old_legal": true,
+        "moves": [
+          [
+            54,
+            62,
+            "q",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 90,
+        "label": "42... Normans: a7 \u2192 a6",
+        "old_legal": true,
+        "moves": [
+          [
+            48,
+            40,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 91,
+        "label": "43. Saxons: e4 \u2192 a4",
+        "old_legal": true,
+        "moves": [
+          [
+            28,
+            24,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 92,
+        "label": "43... Normans: a6 \u2192 b7",
+        "old_legal": true,
+        "moves": [
+          [
+            40,
+            49,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 93,
+        "label": "44. Saxons: g8 \u2192 g6",
+        "old_legal": true,
+        "moves": [
+          [
+            62,
+            46,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 94,
+        "label": "44... Normans: b7 \u2192 c8",
+        "old_legal": true,
+        "moves": [
+          [
+            49,
+            58,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 95,
+        "label": "45. Saxons: a4 \u2192 e4",
+        "old_legal": true,
+        "moves": [
+          [
+            24,
+            28,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 96,
+        "label": "45... Normans: c8 \u2192 b8",
+        "old_legal": true,
+        "moves": [
+          [
+            58,
+            57,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 97,
+        "label": "46. Saxons: e4 \u2192 e7",
+        "old_legal": true,
+        "moves": [
+          [
+            28,
+            52,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 98,
+        "label": "46... Normans: b8 \u2192 a8",
+        "old_legal": true,
+        "moves": [
+          [
+            57,
+            56,
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "index": 99,
+        "label": "47. Saxons: g6 \u2192 g8",
+        "old_legal": true,
+        "moves": [
+          [
+            46,
+            62,
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "failures": []
+  }
+]

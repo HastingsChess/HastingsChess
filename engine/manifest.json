@@ -1,0 +1,17 @@
+{
+  "release": "fairy_sf_14",
+  "repository": "https://github.com/fairy-stockfish/Fairy-Stockfish",
+  "source_archive": "Fairy-Stockfish-fairy_sf_14.tar.gz",
+  "files": {
+    "fairy-stockfish.exe": {
+      "url": "https://github.com/fairy-stockfish/Fairy-Stockfish/releases/download/fairy_sf_14/fairy-stockfish_x86-64.exe",
+      "sha256": "28d5c18fd7352d66800d13e1fdd57ba7d64d95c38d93642fd12cbd89e9d0ed73",
+      "bytes": 1735168
+    },
+    "fairy-stockfish-linux": {
+      "url": "https://github.com/fairy-stockfish/Fairy-Stockfish/releases/download/fairy_sf_14/fairy-stockfish_x86-64",
+      "sha256": "ab6b85823152e78654092dc2fbb154956a559c6ef0455d728268544390ee150f",
+      "bytes": 2337696
+    }
+  }
+}

@@ -1,0 +1,41 @@
+# Phase-four verification — 24 September 2026
+
+## Authoritative base and preservation
+
+This source extends the most recent working Phase 3 Windows/Tkinter launcher fix. The original `engine_uci.py` Windows path-with-spaces fix and its real-engine regression test are retained. Python Hastings legality, housecarls, conditional charge, Game 5 rescue, both Norman bonus rulesets, compound search, user interface, replays and simulation tools remain in place. Level 3 retains its prior `(1.6 seconds, 5 MultiPV candidates, 10,000 fixed nodes)` configuration and the same level-3 compound beam formula. Earlier phase-one source and old balance reports remain in their original folders.
+
+## New work checked in this Linux environment
+
+- `python3 -m unittest -q tests test_engine test_features test_resources` passed: **79 tests**. The real bundled Linux Fairy-Stockfish v14 executable was launched. This includes actual custom-piece legal mapping and UCI search, launch from a path with spaces, every difficulty level's ordinary move and Game 5 rescue, Game 5 charge/rescue/ordinary/both-bonus/counter replay evaluations, unrepresentable-position guarding, Elo persistence/idempotence and packaged-path selection.
+- The new replay path invoked the real Fairy engine for ordinary positions and used the Python Hastings compound planner after the charge. Game 5's charge-end analysis returned a Norman mating evaluation in the tested branch; the first playable rescue remains `f8f7`. During individual in-progress charge events the display explicitly says **provisional** and uses Python's housecarl-aware material/position estimate, because those snapshots are not complete legal turns. Other special positions go through the existing bridge/compound search and are not sent to Fairy as invalid FEN.
+- The ten budgets are strictly increasing in allotted time, MultiPV candidate count and fixed-node allowance; level 1 is `0.16 s / 2 / 400 nodes`, level 3 retains `1.6 s / 5 / 10,000`, level 10 reaches `12 s / 14 / 200,000`. Beam width and number of Fairy endpoint evaluations also increase with level. The lightweight custom opponent remains capped at its original four search depths.
+- An eight-game, node-limited Fairy level-1-versus-level-3 comparison used seeds 42–45 in both colour assignments, a White-move-38 cap and real Fairy calls (`reports/difficulty_1_vs_3_phase4.json`). Level 3 won four completed games, lost one and three were unfinished. This tiny comparison is a smoke test, not a strength rating or evidence of a reliable win percentage. Position and chance variance are substantial.
+- Source compilation and PyInstaller spec syntax passed. A **Linux** one-folder build using pinned PyInstaller 6.22.3 succeeded. Its packaged `--smoke-engine` check launched the real Fairy engine, loaded the variant, found bundled piece assets and made a level-3 AI move, including after copying the folder to a path with spaces and launching from `/`. This validates the spec's Linux resource layout, not Windows/macOS binaries. The Linux runtime's unusual Tcl 9 installation needed its library path supplied to PyInstaller during build; the GUI smoke cannot run without a display. The pinned official engine's GPL licence and corresponding source archive are included.
+
+## Not executed or built here
+
+This session runs in **Linux x86-64**. It has no Windows runtime, Windows build toolchain, macOS runtime, Apple SDK or Mac hardware. PyInstaller builds on the target OS, so **no Windows `.exe` and no macOS `.app` were produced or launched here**. `build_windows.ps1`, `build_macos.sh` and the GitHub Actions native matrix are supplied but have not run. The scripts include native automated tests, a real packaged executable smoke test (engine, Hastings variant, AI move and Tk), and ZIP creation; their success on actual native runners remains to be established. The Windows binary shipped in the source directory was not run on Windows in this session. No Apple Developer credentials were available, and no notarisation or Developer ID signing is claimed.
+
+The 14 current `test_gui.py` cases were added/retained but **could not run** here: Tk reports `couldn't connect to display`, and the local virtual X server cannot open a socket under this container policy. Earlier Phase 3 virtual-display screenshots/tests in `reports/` predate these new controls. Native builds explicitly gate on `test_gui` and their own packaged Tk smoke. This distinction matters: the new ratings/analysis GUI wiring is statically compiled and source reviewed but is not yet a visually tested release on Windows or macOS.
+
+## Acceptance checks on a native runner
+
+Run each native build script. On Windows, start the resulting portable ZIP's executable by double-clicking after moving it into a folder with spaces. Check level 3, level 1 and level 10, a human completed result and persisted ratings after restart, live absence of the eval bar, completed replay score and charge/counter transitions. On macOS, launch the actual `.app`, confirm that its engine has the correct architecture, and repeat the same checks. The native scripts already gate their ZIP outputs on programmatic engine/Tk smoke tests; a human click-through is still useful for layout and Gatekeeper behaviour.
+
+Known limits: no threefold repetition or insufficient-material draw adjudication; old-rule replay formats cannot safely receive new-rule evaluations; compound/charge replay estimates are bounded and can miss tactics; full-game level-10 responsiveness and accuracy have not been benchmarked on consumer hardware. Ratings are local *side* ratings, not individual human or calibrated engine ratings. Unfinished or automated games are not rated by the application.
+
+## Native packaging follow-up — 24 September 2026
+
+The packaging scripts were extended with a **visible packaged GUI smoke** in addition to the existing engine/Tk smoke. It starts a real window, checks the board and all ten selector entries, makes a human move, waits for a bundled Fairy reply, confirms that live evaluation is hidden, uses an isolated temporary ratings profile to test Norman persistence and Saxon 1066, then enters Replay to check the bar and returns to live view. The Windows build copies the folder to a path with spaces and launches from an unrelated working directory. The macOS build checks the compiled engine architecture, verifies the app signature, copies the `.app` to a path with spaces, and runs the same packaged checks. A PyInstaller runtime hook writes failure diagnostics to per-user app data.
+
+These new native checks have **not yet run**. In Linux, the unchanged 79-test rules/real-engine suite still passed, shell/Python syntax checks passed, and the revised Linux PyInstaller one-folder package passed its enhanced engine smoke, including actual Housecarl legal-move mapping. Its Tk smoke deliberately failed because this container has no display; the failure produced the expected per-user diagnostic log. This is no evidence about Windows/macOS Tk packaging.
+
+| Platform | Built on target OS | Packaged launch | Visible GUI | Tk | Fairy/variant/AI | Space-path test | Artifact | SHA-256 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Windows x64 | No | No | No | No | No | No | None yet | Not applicable |
+| macOS arm64 | No | No | No | No | No | No | None yet | Not applicable |
+| macOS x86_64 | No | No | No | No | No | No | None yet | Not applicable |
+
+The GitHub integration is now available, but the connected `dfntrecords-ui` account exposes **zero repositories** to the integration. Repository creation and workflow dispatch are not available through its controls. The workspace also has no Git remote. Accordingly, the workflow has **not** been dispatched and no downloadable native build can honestly be supplied yet. This source is a packaging candidate, not the requested final release. Apple Developer signing and notarisation remain unavailable; the macOS script checks PyInstaller's local code signature only. Internet-download Gatekeeper behaviour remains untested.
+
+The macOS build script's failure trap was corrected so a later cleanup registration does not suppress launch diagnostics. It has passed shell syntax checking; no native Mac execution is claimed.
