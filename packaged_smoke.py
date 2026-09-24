@@ -1,5 +1,5 @@
 """Visible GUI smoke for native packaged applications, with isolated settings."""
-import tempfile,time,types
+import os,tempfile,time,types
 from pathlib import Path
 import tkinter as tk
 from tkinter import ttk
@@ -50,3 +50,5 @@ def run():
             app.live();root.update()
             assert app.eval_canvas is None,'Replay bar leaked back into live view'
         finally:app.close()
+    marker=os.environ.get('HASTINGS_SMOKE_MARKER')
+    if marker:Path(marker).write_text('gui-ok\n',encoding='utf-8')

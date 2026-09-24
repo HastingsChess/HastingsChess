@@ -23,18 +23,23 @@ try {
     }
     Push-Location $env:WINDIR
     try {
+        $marker = Join-Path $stage 'smoke-result.txt'
+        $env:HASTINGS_SMOKE_MARKER = $marker
         $smoke = Start-Process -FilePath $exe -ArgumentList '--smoke-test' -WorkingDirectory $env:WINDIR -Wait -PassThru
-        if ($smoke.ExitCode -ne 0) {
+        if ($smoke.ExitCode -ne 0 -or -not (Test-Path $marker) -or (Get-Content $marker -Raw).Trim() -ne 'engine-ok') {
             if (Test-Path $errorLog) { Get-Content $errorLog -Tail 80 }
             throw 'Portable executable smoke test failed.'
         }
+        Remove-Item $marker
         $guiSmoke = Start-Process -FilePath $exe -ArgumentList '--gui-smoke' -WorkingDirectory $env:WINDIR -Wait -PassThru
-        if ($guiSmoke.ExitCode -ne 0) {
+        if ($guiSmoke.ExitCode -ne 0 -or -not (Test-Path $marker) -or (Get-Content $marker -Raw).Trim() -ne 'gui-ok') {
             if (Test-Path $errorLog) { Get-Content $errorLog -Tail 80 }
             throw 'Portable visible-GUI smoke test failed.'
         }
-    } finally { Pop-Location }
+        Remove-Item $marker
+    } finally { Remove-Item Env:HASTINGS_SMOKE_MARKER -ErrorAction SilentlyContinue; Pop-Location }
 } finally { Remove-Item $stage -Recurse -Force -ErrorAction SilentlyContinue }
 $archive = Join-Path $PSScriptRoot 'dist\HastingsChess_Windows_Portable.zip'
 Compress-Archive -Path $portable -DestinationPath $archive -Force
 Write-Host "Built and smoke-tested $archive"
+exit 0

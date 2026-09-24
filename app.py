@@ -1,5 +1,5 @@
 """Hastings Chess desktop app. Offline, standard-library Tk interface."""
-import json, random, threading, time, queue, uuid, sys
+import json, random, threading, time, queue, uuid, sys, os
 from pathlib import Path
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox, simpledialog, font
@@ -384,5 +384,7 @@ if __name__=='__main__':
    if '--smoke-test' in sys.argv:
     root=tk.Tk();root.withdraw();app=App(root);app.close()
   finally:e.close()
+  marker=os.environ.get('HASTINGS_SMOKE_MARKER')
+  if marker:Path(marker).write_text('engine-ok\n',encoding='utf-8')
  else:
   root=tk.Tk();ttk.Style().theme_use('clam');App(root);root.mainloop()

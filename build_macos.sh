@@ -49,8 +49,11 @@ stage="$(mktemp -d "${TMPDIR:-/tmp}/Hastings Chess Portable.XXXXXXXX")"
 ditto 'dist/Hastings Chess.app' "$stage/Hastings Chess.app"
 (
   cd /
-  "$stage/Hastings Chess.app/Contents/MacOS/HastingsChess" --smoke-test
-  "$stage/Hastings Chess.app/Contents/MacOS/HastingsChess" --gui-smoke
+  HASTINGS_SMOKE_MARKER="$stage/smoke-result.txt" "$stage/Hastings Chess.app/Contents/MacOS/HastingsChess" --smoke-test
+  test "$(cat "$stage/smoke-result.txt")" = engine-ok
+  rm "$stage/smoke-result.txt"
+  HASTINGS_SMOKE_MARKER="$stage/smoke-result.txt" "$stage/Hastings Chess.app/Contents/MacOS/HastingsChess" --gui-smoke
+  test "$(cat "$stage/smoke-result.txt")" = gui-ok
 )
 rm -rf "$stage"
 stage=""
