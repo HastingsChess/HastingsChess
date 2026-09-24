@@ -74,6 +74,7 @@ class GuiTests(unittest.TestCase):
   self.assertEqual(self.app.replay['seed'],11);self.assertEqual(self.app.replay_index,0)
  def test_rules_window_and_standard_ruleset(self):
   a=self.app;before=a.g.export();self.assertFalse(hasattr(a,'rules_box'))
+  self.assertEqual(self.root.title(),'Hastings Chess: Catastrophic Military Stupidity Simulator. Also Axes')
   a.rules_button.invoke();self.root.update()
   self.assertTrue(a.rules_window.winfo_exists())
   self.assertIn('and it was Wednesday.',a.rules_window.winfo_children()[0].winfo_children()[1].get('1.0','end'))

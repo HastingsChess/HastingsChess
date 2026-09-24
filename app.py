@@ -18,7 +18,7 @@ SYMBOL={'K':'♔','Q':'♕','R':'♖','B':'♗','N':'♘','P':'♙',
 
 class App:
  def __init__(self,root):
-    self.root=root;root.title('Hastings Chess — Random Catastrophes');root.minsize(640,580)
+    self.root=root;root.title('Hastings Chess: Catastrophic Military Stupidity Simulator. Also Axes');root.minsize(640,580)
     self.settings=Settings();self.g=Game(random.randrange(1,2**30));self.mode=tk.StringVar(value='Saxons vs computer')
     self.game_id=uuid.uuid4().hex;self.game_rated=True;self.rating_change=None
     self.engine_mode=tk.StringVar(value='Fairy-Stockfish hybrid');self.engine_status=tk.StringVar(value='Fairy-Stockfish selected')
