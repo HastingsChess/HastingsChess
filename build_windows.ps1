@@ -13,16 +13,23 @@ $portable = Join-Path $PSScriptRoot 'dist\HastingsChess'
 $stage = Join-Path $env:TEMP ('Hastings Chess Portable Test ' + [Guid]::NewGuid().ToString('N'))
 $errorLog = Join-Path $env:APPDATA 'Hastings Chess\launch-errors.log'
 try {
-    Copy-Item $portable $stage -Recurse
+    & robocopy $portable $stage /E /R:1 /W:1 | Out-Null
+    if ($LASTEXITCODE -gt 7) { throw "Portable folder copy failed: robocopy exit $LASTEXITCODE" }
+    $exe = Join-Path $stage 'HastingsChess.exe'
+    $tkScript = Join-Path $stage '_internal\_tk_data\ttk\altTheme.tcl'
+    $engineBinary = Join-Path $stage '_internal\engine\fairy-stockfish.exe'
+    if (-not (Test-Path $exe) -or -not (Test-Path $tkScript) -or -not (Test-Path $engineBinary)) {
+        throw 'Portable folder is missing the executable, Tk scripts, or Fairy-Stockfish.'
+    }
     Push-Location $env:WINDIR
     try {
-        & (Join-Path $stage 'HastingsChess.exe') --smoke-test
-        if ($LASTEXITCODE -ne 0) {
+        $smoke = Start-Process -FilePath $exe -ArgumentList '--smoke-test' -WorkingDirectory $env:WINDIR -Wait -PassThru
+        if ($smoke.ExitCode -ne 0) {
             if (Test-Path $errorLog) { Get-Content $errorLog -Tail 80 }
             throw 'Portable executable smoke test failed.'
         }
-        & (Join-Path $stage 'HastingsChess.exe') --gui-smoke
-        if ($LASTEXITCODE -ne 0) {
+        $guiSmoke = Start-Process -FilePath $exe -ArgumentList '--gui-smoke' -WorkingDirectory $env:WINDIR -Wait -PassThru
+        if ($guiSmoke.ExitCode -ne 0) {
             if (Test-Path $errorLog) { Get-Content $errorLog -Tail 80 }
             throw 'Portable visible-GUI smoke test failed.'
         }
