@@ -23,6 +23,18 @@ builddir="$(mktemp -d)"
 tar -xzf engine/Fairy-Stockfish-fairy_sf_14.tar.gz -C "$builddir"
 source_dir="$(find "$builddir" -maxdepth 1 -type d -name 'fairy-stockfish-*' -print -quit)"
 test -n "$source_dir"
+# The pinned Fairy-Stockfish release predates Xcode 16: its obsolete Clang
+# pass-manager switch is rejected by current Apple compilers. Patch only the
+# temporary build copy, leaving the corresponding source archive untouched.
+python3 - "$source_dir/src/Makefile" <<'PY'
+from pathlib import Path
+import sys
+p = Path(sys.argv[1])
+s = p.read_text()
+flag = '-fexperimental-new-pass-manager'
+assert flag in s, 'Unexpected Fairy-Stockfish Makefile version'
+p.write_text(s.replace(flag, ''))
+PY
 make -C "$source_dir/src" -j 2 build ARCH="$target" COMP=clang
 cp "$source_dir/src/stockfish" "engine/fairy-stockfish-macos-$machine"
 chmod +x "engine/fairy-stockfish-macos-$machine"
