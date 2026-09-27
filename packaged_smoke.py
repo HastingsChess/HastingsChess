@@ -8,6 +8,8 @@ from settings import Settings,SAXON_RATING
 def run():
     # Import here so the normal user-facing start path stays unchanged.
     from app import App
+    from packaging_checks import verify_bundled_tk
+    verify_bundled_tk()
     with tempfile.TemporaryDirectory(prefix='Hastings GUI smoke ') as temp:
         root=tk.Tk();ttk.Style().theme_use('clam');root.geometry('1100x800')
         app=App(root)

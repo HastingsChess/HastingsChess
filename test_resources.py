@@ -1,9 +1,10 @@
 """Bundle layout and launch paths; tests run against source and native builds."""
-import tempfile,unittest,hashlib
+import tempfile,unittest,hashlib,os,sys
 from pathlib import Path
 from unittest.mock import patch
 import engine_uci
 import app
+from packaging_checks import verify_bundled_tk
 
 class ResourceTests(unittest.TestCase):
  def test_platform_filenames(self):
@@ -29,5 +30,19 @@ class ResourceTests(unittest.TestCase):
   text=raw.decode('utf-8')
   self.assertIn('20\t1%',text);self.assertIn('30\t100%',text)
   self.assertIn('I just had too much time on my hands and it was Wednesday.',text)
+ def test_packaged_tk_requires_bundled_init_and_correct_runtime_paths(self):
+  with tempfile.TemporaryDirectory(prefix='Hastings Tk bundle ') as d:
+   root=Path(d);tcl=root/'_tcl_data';tk=root/'_tk_data'
+   tcl.mkdir();tk.mkdir()
+   (tcl/'init.tcl').write_text('test',encoding='utf-8')
+   (tk/'tk.tcl').write_text('test',encoding='utf-8')
+   with patch.object(sys,'frozen',True,create=True),patch.object(sys,'_MEIPASS',d,create=True):
+    with patch.dict(os.environ,{'TCL_LIBRARY':str(tcl),'TK_LIBRARY':str(tk)}):
+     verify_bundled_tk()
+     (tcl/'init.tcl').unlink()
+     with self.assertRaisesRegex(AssertionError,'Missing bundled init.tcl'):verify_bundled_tk()
+     (tcl/'init.tcl').write_text('test',encoding='utf-8')
+     os.environ['TCL_LIBRARY']=str(root/'somewhere-else')
+     with self.assertRaisesRegex(AssertionError,'TCL_LIBRARY'):verify_bundled_tk()
 
 if __name__=='__main__':unittest.main()

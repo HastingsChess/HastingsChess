@@ -45,20 +45,52 @@ fi
 python3 -m unittest -q tests test_engine test_features test_resources test_gui
 python3 -m PyInstaller --clean --noconfirm hastings.spec
 codesign --verify --deep --verbose=2 'dist/Hastings Chess.app'
+python3 - <<'PY'
+from pathlib import Path
+import subprocess
+app=Path('dist/Hastings Chess.app').resolve()
+frameworks=app/'Contents'/'Frameworks'
+resources=app/'Contents'/'Resources'
+for name in ('_tcl_data/init.tcl','_tk_data/tk.tcl','_tk_data/ttk/altTheme.tcl','engine/hastings.ini'):
+    assert (resources/name).is_file(), f'Missing bundled resource: {name}'
+for link in app.rglob('*'):
+    if link.is_symlink():
+        assert link.resolve().is_relative_to(app), f'External bundle symlink: {link}'
+tkinter=next(frameworks.rglob('_tkinter*.so'))
+for binary in (app/'Contents/MacOS/HastingsChess', tkinter,
+               frameworks/'libtcl8.6.dylib', frameworks/'libtk8.6.dylib'):
+    assert binary.is_file(), f'Missing bundled runtime: {binary}'
+    result=subprocess.check_output(['otool','-L',str(binary)],text=True)
+    for path in ('/opt/homebrew/','/usr/local/','/Users/runner/',
+                 '/Library/Frameworks/Python.framework/',
+                 '/System/Library/Frameworks/Tcl.framework/',
+                 '/System/Library/Frameworks/Tk.framework/'):
+        assert path not in result, f'External runtime dependency in {binary}: {result}'
+PY
 stage="$(mktemp -d "${TMPDIR:-/tmp}/Hastings Chess Portable.XXXXXXXX")"
-ditto 'dist/Hastings Chess.app' "$stage/Hastings Chess.app"
-(
-  cd /
-  HASTINGS_SMOKE_MARKER="$stage/smoke-result.txt" "$stage/Hastings Chess.app/Contents/MacOS/HastingsChess" --smoke-test
-  test "$(cat "$stage/smoke-result.txt")" = engine-ok
-  rm "$stage/smoke-result.txt"
-  HASTINGS_SMOKE_MARKER="$stage/smoke-result.txt" "$stage/Hastings Chess.app/Contents/MacOS/HastingsChess" --gui-smoke
-  test "$(cat "$stage/smoke-result.txt")" = gui-ok
-)
-rm -rf "$stage"
-stage=""
 ditto -c -k --sequesterRsrc --keepParent 'dist/Hastings Chess.app' "dist/HastingsChess_macOS_${machine}.zip"
 guide='Honestly, you should probably read this at some point.txt'
 /usr/bin/zip -j -q "dist/HastingsChess_macOS_${machine}.zip" "$guide"
 unzip -p "dist/HastingsChess_macOS_${machine}.zip" "$guide" | cmp - "$guide"
+ditto -x -k "dist/HastingsChess_macOS_${machine}.zip" "$stage"
+codesign --verify --deep --verbose=2 "$stage/Hastings Chess.app"
+test -f "$stage/Hastings Chess.app/Contents/Resources/_tcl_data/init.tcl"
+test -f "$stage/Hastings Chess.app/Contents/Resources/_tk_data/tk.tcl"
+mkdir "$stage/clean-home"
+(
+  cd /
+  env -i HOME="$stage/clean-home" USER="${USER:-runner}" LOGNAME="${USER:-runner}" \
+    TMPDIR="${TMPDIR:-/tmp}" PATH='/usr/bin:/bin:/usr/sbin:/sbin' LANG=en_US.UTF-8 \
+    HASTINGS_SMOKE_MARKER="$stage/smoke-result.txt" \
+    "$stage/Hastings Chess.app/Contents/MacOS/HastingsChess" --smoke-test
+  test "$(cat "$stage/smoke-result.txt")" = engine-ok
+  rm "$stage/smoke-result.txt"
+  env -i HOME="$stage/clean-home" USER="${USER:-runner}" LOGNAME="${USER:-runner}" \
+    TMPDIR="${TMPDIR:-/tmp}" PATH='/usr/bin:/bin:/usr/sbin:/sbin' LANG=en_US.UTF-8 \
+    HASTINGS_SMOKE_MARKER="$stage/smoke-result.txt" \
+    "$stage/Hastings Chess.app/Contents/MacOS/HastingsChess" --gui-smoke
+  test "$(cat "$stage/smoke-result.txt")" = gui-ok
+)
+rm -rf "$stage"
+stage=""
 echo "Built and smoke-tested dist/HastingsChess_macOS_${machine}.zip"

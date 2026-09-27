@@ -393,6 +393,8 @@ if __name__=='__main__':
  elif '--smoke-test' in sys.argv or '--smoke-engine' in sys.argv:
   from engine_uci import FairyEngine
   from hybrid import Hybrid
+  from packaging_checks import verify_bundled_tk
+  verify_bundled_tk()
   e=FairyEngine()
   try:
    assert (ROOT/'assets'/'pieces'/'wk_68.png').is_file()
