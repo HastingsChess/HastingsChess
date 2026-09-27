@@ -1,6 +1,6 @@
 # Hastings Chess v1.0.0 native packaging repair
 
-27 September 2026. Source branch `repair/tcl-tk-portability`; native [build and published-Mac audit run #25](https://github.com/HastingsChess/HastingsChess/actions/runs/36345674867).
+27 September 2026. Repair commits on `main` through `7c651ff`; native [build and published-Mac audit run #25](https://github.com/HastingsChess/HastingsChess/actions/runs/36345674867).
 
 ## Windows
 
@@ -9,6 +9,8 @@ The previous Windows ZIP was a PyInstaller one-folder build. Its `_internal/_tcl
 The repaired Windows build is a single-file PyInstaller executable inside a ZIP with the unchanged player guide. Python, Tcl/Tk data and DLLs, Fairy-Stockfish, variant configuration and assets are embedded in that executable and extracted by its bootloader at launch. Its smoke tests assert that `TCL_LIBRARY` and `TK_LIBRARY` point at the bootloader's own `_tcl_data` and `_tk_data`, and that `init.tcl` and `tk.tcl` exist there.
 
 A native Windows Server 2022 x64 runner passed **99 automated tests**. The build script extracted its own final ZIP to a path with spaces, ran from an unrelated working directory, removed Python from `PATH`, poisoned inherited Python/Tcl/Tk search paths, and ran packaged engine/Tk and visible GUI smoke modes. Those checks include Fairy-Stockfish UCI, Hastings variant/Housecarl mapping, a level-3 legal move, ratings and Replay. This is direct execution of the packaged EXE on Windows. It is not a personal clean Windows machine test. The corrected ZIP was downloaded and passed CRC and content checks. `Hastings.Chess.v1.0.0.Windows.zip` SHA-256: `619c90bf404c9729e03a9145bdce1ce09b3dce9061916f11ba5828b2844da6dc`.
+
+The corrected ZIP replaced the public v1.0.0 Windows download at the same filename and URL. GitHub's release asset digest matches the runner candidate: `sha256:619c90bf404c9729e03a9145bdce1ce09b3dce9061916f11ba5828b2844da6dc`. The previous broken asset remains available only as `Hastings.Chess.v1.0.0.Windows.broken-original.zip` for rollback; it must not be used for installation. The two macOS release assets were not replaced.
 
 ## macOS Apple Silicon and Intel
 
