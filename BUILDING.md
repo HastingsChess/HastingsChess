@@ -17,6 +17,7 @@ The app is not Apple Developer signed or notarised. PyInstaller may add an ad-ho
 ## Native CI
 
 `.github/workflows/native-builds.yml` has Windows x64, macOS arm64 and macOS Intel jobs, with native smoke checks before publishing each ZIP as an artifact. Put the contents of this source folder at repository root and run the workflow manually. A passing workflow is evidence of that runner's build/test, not physical Mac or arbitrary Windows machine coverage.
+Manual workflow runs also audit the already-published v1.0.0 Mac ZIPs on matching architectures using `audit_release_macos.sh`. This downloads and extracts the public assets, checks native dependencies and signatures, then launches engine and GUI smoke modes without inherited Python, Tcl/Tk or Homebrew search paths. This is a release-specific check, separate from building new candidates.
 
 All paths to assets, variant and engine are relative to the packaged application's `__file__` resource root. The engine itself is started by absolute path with `cwd` set to its resource directory and `load hastings.ini`, preserving the working fix for directories with spaces. Ratings live under per-user app data, outside the executable folder, so moving the app or running from a removable drive does not affect persistence.
 

@@ -38,3 +38,13 @@ jobs:
         with:
           name: HastingsChess_macOS_${{ matrix.arch }}
           path: dist/HastingsChess_macOS_${{ matrix.arch }}.zip
+  audit-published-mac:
+    if: github.event_name == 'workflow_dispatch'
+    strategy:
+      matrix:
+        runner: [macos-15, macos-15-intel]
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify the existing v1.0.0 Mac download in isolation
+        run: bash ./audit_release_macos.sh
