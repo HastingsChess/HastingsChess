@@ -60,7 +60,8 @@ tkinter=next(frameworks.rglob('_tkinter*.so'))
 for binary in (app/'Contents/MacOS/HastingsChess', tkinter,
                frameworks/'libtcl8.6.dylib', frameworks/'libtk8.6.dylib'):
     assert binary.is_file(), f'Missing bundled runtime: {binary}'
-    result=subprocess.check_output(['otool','-L',str(binary)],text=True)
+    # The first line is the binary's own absolute path, not a dependency.
+    result='\n'.join(subprocess.check_output(['otool','-L',str(binary)],text=True).splitlines()[1:])
     for path in ('/opt/homebrew/','/usr/local/','/Users/runner/',
                  '/Library/Frameworks/Python.framework/',
                  '/System/Library/Frameworks/Tcl.framework/',
