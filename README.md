@@ -12,15 +12,9 @@ You do not need to understand GitHub. Pick your computer.
 |:--:|:--:|:--:|
 | [⬇ Download Windows](https://github.com/HastingsChess/HastingsChess/releases/download/v1.0.0/Hastings.Chess.v1.0.0.Windows.zip) | [⬇ Download Apple Silicon Mac](https://github.com/HastingsChess/HastingsChess/releases/download/v1.0.0/Hastings.Chess.v1.0.0.macOS.arm64.zip) | [⬇ Download Intel Mac](https://github.com/HastingsChess/HastingsChess/releases/download/v1.0.0/Hastings.Chess.v1.0.0.macOS.x86.64.zip) |
 
-Windows: extract the ZIP and run `HastingsChess.exe`.
+Simply extract the zip and run.
 
-Mac: extract the ZIP and open `Hastings Chess.app`. If macOS objects because the app is unsigned, use the normal Gatekeeper approval process.
-
-Not sure which Mac you have? Open Apple menu → About This Mac. If it says Apple M1, M2, M3, M4 or later, choose Apple Silicon. If it says Intel, choose Intel.
-
-[View the latest release](https://github.com/HastingsChess/HastingsChess/releases/latest)
-
-Free. Open source. No account required. Ten AI difficulty levels. Several hundred live and automated tests. Both sides can win at every level, although the Norman advantage increases as difficulty rises because William did, in fact, win.
+Run as far away as possible.
 
 ---
 
