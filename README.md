@@ -409,7 +409,7 @@ HastingsChess.exe
 
 No separate Python or Fairy-Stockfish installation is required.
 
-The portable Windows build has been run successfully on a normal Windows system.
+The portable Windows build has passed native packaged launch checks; independent personal-machine testing remains important.
 
 ### macOS
 
