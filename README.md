@@ -18,7 +18,7 @@ Run as far away as possible.
 
 ---
 
-A deliberately asymmetric chess variant about the Battle of Hastings, battlefield discipline, and the consequences of everybody suddenly making a very bad decision at once.
+Hastings Chess is a deliberately asymmetric chess variant about the Battle of Hastings, battlefield discipline, and the consequences of everybody suddenly making a very bad decision at once.
 
 Hastings Chess begins much like ordinary chess. The Saxons have a small early advantage in the form of two Housecarls. The Normans have a conventional army.
 
