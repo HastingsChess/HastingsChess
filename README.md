@@ -15,6 +15,9 @@
 > “The streams I’m currently doing are not really focused on this type of content.”  
 > — GM José Carlos Ibarra Jerez
 
+> “Unfortunately I think this is a bit esoteric for our audience.”  
+> — John Hartmann, *Chess Life*
+
 ## Download the game
 
 You do not need to understand GitHub. Pick your computer.
