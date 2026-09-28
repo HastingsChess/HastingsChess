@@ -9,9 +9,6 @@
 > “Unfortunately I think this is a bit esoteric for our audience.”  
 > — John Hartmann, *Chess Life*
 
-> “The streams I’m currently doing are not really focused on this type of content.”  
-> — GM José Carlos Ibarra Jerez
-
 > “Ha! I don’t understand a word of that.”  
 > — Mark Crowther, *The Week in Chess*
 
