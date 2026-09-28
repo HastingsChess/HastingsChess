@@ -4,20 +4,6 @@
 
 **Also Axes**
 
-## Critical acclaim
-
-> “Unfortunately I think this is a bit esoteric for our audience.”  
-> — John Hartmann, *Chess Life*
-
-> “Ha! I don’t understand a word of that.”  
-> — Mark Crowther, *The Week in Chess*
-
-> “This front is driving me insane”  
-> — RefusePlenty9589
-
-> “Bruh what”  
-> — NM Nicholas Rosenthal
-
 ## Download the game
 
 You do not need to understand GitHub. Pick your computer.
