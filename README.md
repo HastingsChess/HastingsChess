@@ -16,7 +16,7 @@
 > — Mark Crowther, *The Week in Chess*
 
 > “This front is driving me insane”  
-> — RefusePlenty9589, Reddit
+> — RefusePlenty9589
 
 > “Bruh what”  
 > — NM Nicholas Rosenthal
