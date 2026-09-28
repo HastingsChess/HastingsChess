@@ -4,6 +4,17 @@
 
 **Also Axes**
 
+## Critical acclaim
+
+> “Ha! I don’t understand a word of that...”  
+> — Mark Crowther, *The Week in Chess*
+
+> “Bruh what”  
+> — NM Nicholas Rosenthal
+
+> “The streams I’m currently doing are not really focused on this type of content.”  
+> — GM José Carlos Ibarra Jerez
+
 ## Download the game
 
 You do not need to understand GitHub. Pick your computer.
